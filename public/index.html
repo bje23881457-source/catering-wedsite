@@ -90,7 +90,7 @@
   .hero-frame{position:relative;border-radius:200px 200px 14px 14px;overflow:hidden;aspect-ratio:3/3.7;
     background:linear-gradient(160deg,#e9c9a8 0%,#d99f74 38%,#b3714c 78%,#8f5a3a 100%);box-shadow:var(--shadow)}
   .hero-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .hero-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 30% 15%,rgba(255,248,238,.5),transparent 55%);z-index:1}
+  .hero-frame::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(35,28,20,.6),transparent 42%),radial-gradient(120% 80% at 30% 12%,rgba(255,248,238,.32),transparent 55%);z-index:1}
   .hero-frame::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:26px 26px;opacity:.4;z-index:1}
   .hero-frame .cap{position:absolute;bottom:26px;left:24px;right:24px;color:#fff8ef;z-index:2}
   .hero-frame .cap .k{font-family:var(--lat);font-style:italic;font-size:1.55rem;line-height:1.4}
@@ -132,7 +132,7 @@
   .about-frame{border-radius:14px 14px 160px 160px;overflow:hidden;aspect-ratio:4/4.6;position:relative;
     background:linear-gradient(150deg,#dfe0cf 0%,#b9b493 45%,#7d8368 100%);box-shadow:var(--shadow)}
   .about-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .about-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(110% 70% at 70% 10%,rgba(255,251,244,.5),transparent 55%);z-index:1}
+  .about-frame::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(35,28,20,.55),transparent 45%),radial-gradient(110% 70% at 70% 10%,rgba(255,251,244,.22),transparent 55%);z-index:1}
   .about-frame .q{position:absolute;top:34px;left:30px;right:30px;font-family:var(--lat);font-style:italic;font-size:1.7rem;color:#fffbf4;line-height:1.5;z-index:2}
   .about-badge{position:absolute;bottom:-22px;right:-16px;background:var(--paper);border-radius:14px;padding:1.3rem 1.5rem;box-shadow:var(--shadow-sm);max-width:230px;z-index:3}
   .about-badge b{font-family:var(--serif);color:var(--clay);font-size:1.02rem}
@@ -353,8 +353,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-frame">
-        <!-- 사진 교체: 아래 줄의 주석을 풀고 파일명을 넣으세요
-        <img src="images/hero.jpg" alt="더 신라 테이블 대표 케이터링"> -->
+        <img src="images/KakaoTalk_20260407_160826767_07.jpg" alt="더 신라 테이블 프리미엄 케이터링 디저트 세팅">
         <div class="cap"><div class="k">“한 접시에 담긴<br>경주의 시간”</div></div>
       </div>
       <div class="hero-badge"><b>1994</b><span>SINCE</span></div>
@@ -409,7 +408,7 @@
   <div class="wrap about-grid">
     <div class="about-visual reveal">
       <div class="about-frame">
-        <!-- 사진 교체: <img src="images/about.jpg" alt="30년 경력 셰프"> -->
+        <img src="images/KakaoTalk_20260407_160826767_08.jpg" alt="더 신라 테이블 행사 현장 세팅">
         <div class="q">“음식을 넘어,<br>행사의 격(格)을<br>완성합니다.”</div>
       </div>
       <div class="about-badge"><b>30년 경력 셰프의 손끝</b><span>수비드·콩피 등 사전 생산 안정 조리법으로 대량 행사에도 균일한 품질을 구현합니다.</span></div>
@@ -501,33 +500,33 @@
       <span class="fbtn on" data-f="all" onclick="filterCase(this)">전체</span>
       <span class="fbtn" data-f="학회" onclick="filterCase(this)">학회</span>
       <span class="fbtn" data-f="기업" onclick="filterCase(this)">기업</span>
-      <span class="fbtn" data-f="관공서" onclick="filterCase(this)">관공서</span>
-      <span class="fbtn" data-f="인바운드" onclick="filterCase(this)">인바운드</span>
+      <span class="fbtn" data-f="단체도시락" onclick="filterCase(this)">단체도시락</span>
+      <span class="fbtn" data-f="뷔페" onclick="filterCase(this)">뷔페·디저트</span>
     </div>
     <div class="case-grid" id="caseGrid">
-      <div class="case reveal" data-cat="학회">
-        <div class="thumb c1"><span class="tag">학회 · 다일정</span></div>
-        <div class="body"><h3>국제학술대회 3일 단체도시락</h3><p>1,200명 규모, 3일간 매 끼니 다른 구성. 사전 생산으로 정시 납품과 위생을 완벽 관리한 사례.</p><div class="meta"><span>1,200명</span><span>3일 일정</span></div></div>
+      <div class="case reveal" data-cat="단체도시락">
+        <div class="thumb c1"><img src="images/KakaoTalk_20260420_224219319_01.jpg" alt="대규모 학술대회 단체도시락"><span class="tag">단체도시락 · 대규모</span></div>
+        <div class="body"><h3>대규모 학술대회 단체도시락</h3><p>수백 인분을 개별 구성으로 준비해 정시에 납품. 스테이크·해산물·디저트까지 프리미엄 구성으로 완성했습니다.</p><div class="meta"><span>대규모</span><span>개별 구성</span></div></div>
       </div>
       <div class="case reveal" data-cat="기업">
-        <div class="thumb c2"><span class="tag">기업 · 만찬</span></div>
-        <div class="body"><h3>대기업 임직원 시상 만찬</h3><p>브랜드 격에 맞춘 플레이팅 케이터링과 공간 연출로 완성한 800명 규모 프리미엄 만찬.</p><div class="meta"><span>800명</span><span>플레이팅</span></div></div>
-      </div>
-      <div class="case reveal" data-cat="관공서">
-        <div class="thumb c3"><span class="tag">관공서 · 의전</span></div>
-        <div class="body"><h3>지자체 국제행사 의전 케이터링</h3><p>공신력 있는 견적·증빙과 함께 진행한 관공서 국제행사. 의전 기준에 맞춘 세팅과 운영.</p><div class="meta"><span>500명</span><span>의전</span></div></div>
-      </div>
-      <div class="case reveal" data-cat="인바운드">
-        <div class="thumb c4"><span class="tag">인바운드 · 할랄</span></div>
-        <div class="body"><h3>외국인 단체 헤리티지 다이닝</h3><p>할랄·채식 등 특수 식이를 반영하고 신라 스토리텔링을 더한 인바운드 단체 다이닝.</p><div class="meta"><span>다국어</span><span>할랄 대응</span></div></div>
-      </div>
-      <div class="case reveal" data-cat="기업">
-        <div class="thumb c5"><span class="tag">기업 · 출장뷔페</span></div>
-        <div class="body"><h3>신제품 론칭 출장 뷔페</h3><p>현장 세팅부터 운영 인력, 사후 정리까지 원스톱으로 진행한 기업 론칭 행사 케이터링.</p><div class="meta"><span>600명</span><span>뷔페</span></div></div>
+        <div class="thumb c2"><img src="images/KakaoTalk_20260407_160826767_09.jpg" alt="기업 리더십 미팅 디저트 뷔페"><span class="tag">기업 · 디저트 뷔페</span></div>
+        <div class="body"><h3>기업 리더십 미팅 디저트·뷔페</h3><p>미러 트레이와 플라워 세팅으로 완성한 기업 행사 디저트 뷔페. 브랜드 격에 맞춘 프리미엄 연출.</p><div class="meta"><span>기업 행사</span><span>디저트 뷔페</span></div></div>
       </div>
       <div class="case reveal" data-cat="학회">
-        <div class="thumb c6"><span class="tag">학회 · 핑거푸드</span></div>
-        <div class="body"><h3>학술 네트워킹 리셉션</h3><p>격조 있는 핑거푸드와 음료 딜리버리로 완성한 학술대회 리셉션. 동선과 회전율까지 설계.</p><div class="meta"><span>400명</span><span>리셉션</span></div></div>
+        <div class="thumb c3"><img src="images/KakaoTalk_20260407_160826767_01.jpg" alt="학술대회 디저트 뷔페"><span class="tag">학회 · 디저트</span></div>
+        <div class="body"><h3>학술대회 디저트 뷔페</h3><p>학회 현장에 어울리는 격조 있는 디저트·핑거푸드 세팅. 미러 트레이와 제철 과일로 품격을 더했습니다.</p><div class="meta"><span>학술대회</span><span>핑거푸드</span></div></div>
+      </div>
+      <div class="case reveal" data-cat="학회">
+        <div class="thumb c4"><img src="images/KakaoTalk_20260420_220214046.jpg" alt="학회 캠페인 리셉션 케이터링"><span class="tag">학회 · 리셉션</span></div>
+        <div class="body"><h3>학회 캠페인 리셉션</h3><p>새우 카나페·파나코타 등 섬세한 핑거푸드로 구성한 학술 캠페인 리셉션 케이터링.</p><div class="meta"><span>리셉션</span><span>카나페</span></div></div>
+      </div>
+      <div class="case reveal" data-cat="뷔페">
+        <div class="thumb c5"><img src="images/KakaoTalk_20260407_160826767_06.jpg" alt="컨벤션 대형 출장 뷔페"><span class="tag">뷔페 · 대형 행사</span></div>
+        <div class="body"><h3>컨벤션 대형 출장 뷔페</h3><p>대형 컨벤션 현장에 긴 뷔페 라인을 세팅. 샐러드·핑거푸드·디저트·과일까지 동선을 고려해 구성했습니다.</p><div class="meta"><span>대형 행사</span><span>출장 뷔페</span></div></div>
+      </div>
+      <div class="case reveal" data-cat="단체도시락">
+        <div class="thumb c6"><img src="images/KakaoTalk_20260420_224219319_02.jpg" alt="프리미엄 개별 도시락"><span class="tag">단체도시락 · 프리미엄</span></div>
+        <div class="body"><h3>프리미엄 개별 도시락</h3><p>리본 패키지와 안내 카드까지 갖춘 프리미엄 개별 도시락. 학회·기업 VIP 행사에 어울리는 구성입니다.</p><div class="meta"><span>프리미엄</span><span>개별 포장</span></div></div>
       </div>
     </div>
   </div>
@@ -559,9 +558,9 @@
       <div class="divider"></div>
     </div>
     <div class="note-grid">
-      <div class="note reveal"><div class="nh"></div><div class="nb"><span class="date">2026 · 06</span><h3>1,200명 학회 도시락, 어떻게 정시에?</h3><p>대규모 다일정 행사에서 품질과 정시성을 지키는 사전 생산 운영의 실제.</p></div></div>
-      <div class="note reveal"><div class="nh" style="background:linear-gradient(150deg,#e3d3b6,#c2a06f)"></div><div class="nb"><span class="date">2026 · 05</span><h3>신라 헤리티지를 담은 봄 메뉴 개발기</h3><p>경주의 제철 재료와 신라 문화를 한 상에 녹여낸 시즌 메뉴 이야기.</p></div></div>
-      <div class="note reveal"><div class="nh" style="background:linear-gradient(150deg,#d7ddc6,#9aa382)"></div><div class="nb"><span class="date">2026 · 04</span><h3>외국인 단체 할랄 케이터링 현장</h3><p>특수 식이 대응과 다국어 응대로 완성한 인바운드 행사 스케치.</p></div></div>
+      <div class="note reveal"><div class="nh"><img src="images/KakaoTalk_20260407_160433820.jpg" alt="단체도시락 구성"></div><div class="nb"><span class="date">2026 · 06</span><h3>대규모 학회 도시락, 어떻게 정시에?</h3><p>대규모 다일정 행사에서 품질과 정시성을 지키는 사전 생산 운영의 실제.</p></div></div>
+      <div class="note reveal"><div class="nh"><img src="images/KakaoTalk_20260407_160826767.jpg" alt="디저트 테이블 세팅"></div><div class="nb"><span class="date">2026 · 05</span><h3>신라 헤리티지를 담은 봄 메뉴 개발기</h3><p>경주의 제철 재료와 신라 문화를 한 상에 녹여낸 시즌 메뉴 이야기.</p></div></div>
+      <div class="note reveal"><div class="nh"><img src="images/KakaoTalk_20260407_160826767_03.jpg" alt="신선 과일·디저트 구성"></div><div class="nb"><span class="date">2026 · 04</span><h3>제철 과일과 디저트로 완성한 디테일</h3><p>행사의 마무리를 책임지는 신선 과일·디저트 구성 이야기.</p></div></div>
     </div>
   </div>
 </section>
