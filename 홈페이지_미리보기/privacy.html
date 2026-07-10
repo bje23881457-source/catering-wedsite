@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개인정보처리방침 | 더 신라 테이블 (THE SILLA TABLE)</title>
+<meta name="description" content="더 신라 테이블 개인정보처리방침. 견적 문의 시 수집하는 개인정보의 항목, 이용 목적, 보유 기간, 정보주체의 권리 등을 안내합니다.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101d38;
+    --navy-deep:#0a1428;
+    --gold:#c6a15b;
+    --gold-2:#b8924a;
+    --gold-soft:#dcc188;
+    --ivory:#f8f4ec;
+    --ivory-2:#efe7d7;
+    --ink:#1c2233;
+    --muted:#71768a;
+    --line:rgba(198,161,91,.28);
+    --serif:'Noto Serif KR', serif;
+    --sans:'Noto Sans KR', sans-serif;
+    --shadow-sm:0 10px 30px rgba(10,20,40,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold);color:#1a1405}
+  .serif{font-family:var(--serif)}
+
+  /* ===== Header ===== */
+  header{background:var(--navy-deep);color:var(--ivory);position:sticky;top:0;z-index:50;box-shadow:0 2px 24px rgba(0,0,0,.28)}
+  .nav{width:min(1080px,92%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1.05rem 0;gap:1rem}
+  .logo{font-family:var(--serif);font-weight:700;font-size:1.32rem;color:var(--ivory);letter-spacing:.03em;line-height:1}
+  .logo b{color:var(--gold)}
+  .logo small{display:block;font-size:.6rem;letter-spacing:.32em;color:var(--gold-soft);font-weight:600;margin-top:5px;text-transform:uppercase}
+  .home-link{color:var(--ivory);font-size:.92rem;font-weight:400;opacity:.9;transition:.25s;border:1px solid rgba(248,244,236,.35);padding:.5em 1.1em;border-radius:3px;white-space:nowrap}
+  .home-link:hover{background:rgba(248,244,236,.1);border-color:var(--gold-soft);opacity:1}
+
+  /* ===== Page title band ===== */
+  .title-band{background:var(--navy);color:var(--ivory);padding:3.2rem 0 2.9rem;position:relative;overflow:hidden}
+  .title-band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(198,161,91,.09) 1px,transparent 1px);background-size:26px 26px;opacity:.5}
+  .title-band .inner{width:min(820px,92%);margin:0 auto;position:relative;z-index:2}
+  .eyebrow{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .title-band h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.8rem,4.5vw,2.5rem);margin:.7rem 0 .3rem;letter-spacing:-.01em}
+  .title-band p{color:rgba(248,244,236,.72);font-size:.94rem;font-weight:300}
+
+  /* ===== Main ===== */
+  main{width:min(820px,92%);margin:0 auto;padding:3.2rem 0 4rem}
+
+  /* Notice box */
+  .notice{background:#fff7e8;border:1px solid var(--gold);border-left:5px solid var(--gold);border-radius:6px;padding:1.25rem 1.5rem;margin-bottom:3rem;box-shadow:var(--shadow-sm)}
+  .notice strong{display:block;font-family:var(--serif);color:var(--navy);font-size:1rem;margin-bottom:.35rem}
+  .notice p{color:#5c4a24;font-size:.92rem;line-height:1.7}
+
+  .intro{color:var(--ink);font-size:.98rem;margin-bottom:2.6rem}
+
+  /* Sections */
+  .clause{margin-bottom:2.8rem}
+  .clause h2{font-family:var(--serif);font-weight:600;font-size:1.28rem;color:var(--navy);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:.6rem}
+  .clause h2 .num{font-family:var(--serif);color:var(--gold-2);font-weight:700;font-size:1.12rem}
+  .clause h3{font-family:var(--serif);font-weight:500;font-size:1.02rem;color:var(--ink);margin:1.3rem 0 .55rem}
+  .clause p{margin-bottom:.7rem;font-size:.96rem}
+  .clause ul{list-style:none;margin:.4rem 0 .9rem;padding:0}
+  .clause ul li{position:relative;padding-left:1.25rem;margin-bottom:.5rem;font-size:.95rem}
+  .clause ul li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;background:var(--gold);border-radius:50%}
+  .clause ul li b{color:var(--navy);font-weight:500}
+
+  /* Tables */
+  .tbl-wrap{overflow-x:auto;margin:.6rem 0 1rem;border:1px solid var(--line);border-radius:6px}
+  table{border-collapse:collapse;width:100%;min-width:460px;font-size:.92rem}
+  th,td{border-bottom:1px solid var(--ivory-2);padding:.75rem .95rem;text-align:left;vertical-align:top}
+  thead th{background:var(--navy);color:var(--ivory);font-weight:500;border-bottom:none;font-size:.9rem}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:rgba(198,161,91,.06)}
+  td .req{color:var(--gold-2);font-weight:600}
+
+  /* Contact card */
+  .contact-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.5rem 1.7rem;box-shadow:var(--shadow-sm)}
+  .contact-card dl{display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.4rem}
+  .contact-card dt{color:var(--muted);font-size:.9rem;white-space:nowrap}
+  .contact-card dd{color:var(--ink);font-size:.96rem;font-weight:500}
+
+  /* Placeholder highlight */
+  .ph{background:rgba(198,161,91,.18);border-bottom:1px dashed var(--gold-2);padding:0 .25em;border-radius:2px;font-style:normal;color:#7a5f1f;font-weight:500}
+
+  .effective{margin-top:2.5rem;padding-top:1.6rem;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+  .effective b{color:var(--navy);font-weight:500}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy-deep);color:rgba(248,244,236,.6);padding:2.4rem 0;text-align:center;font-size:.85rem}
+  footer .fwrap{width:min(820px,92%);margin:0 auto}
+  footer .flogo{font-family:var(--serif);color:var(--ivory);font-size:1.05rem;font-weight:600;margin-bottom:.5rem}
+  footer .flogo b{color:var(--gold)}
+  footer a{color:var(--gold-soft)}
+  footer a:hover{text-decoration:underline}
+  footer .sep{color:rgba(248,244,236,.3);margin:0 .5em}
+
+  @media (max-width:620px){
+    .nav{padding:.9rem 0}
+    .logo{font-size:1.15rem}
+    main{padding:2.4rem 0 3rem}
+    .contact-card dl{grid-template-columns:1fr;gap:.15rem}
+    .contact-card dt{margin-top:.6rem}
+    .clause h2{font-size:1.14rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">더 신라 <b>테이블</b><small>The Silla Table</small></a>
+    <a href="index.html" class="home-link">← 홈으로</a>
+  </div>
+</header>
+
+<div class="title-band">
+  <div class="inner">
+    <span class="eyebrow">Privacy Policy</span>
+    <h1>개인정보처리방침</h1>
+    <p>더 신라 테이블(THE SILLA TABLE)은 정보주체의 개인정보를 소중히 여기며 관련 법령을 준수합니다.</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="notice">
+    <strong>⚠ 안내</strong>
+    <p>본 방침은 표준 템플릿을 기반으로 작성된 초안이며, 실제 시행 전 반드시 법무·행정 전문가의 검토를 받으시기 바랍니다.</p>
+  </div>
+
+  <p class="intro">
+    더 신라 테이블(이하 '회사')은 「개인정보 보호법」 등 관련 법령에 따라 정보주체의 개인정보를 보호하고,
+    개인정보와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보처리방침을 수립·공개합니다.
+    본 방침은 회사 웹사이트의 CONTACT(견적 문의) 폼을 통한 개인정보 수집·이용에 적용됩니다.
+  </p>
+
+  <!-- 1 -->
+  <section class="clause">
+    <h2><span class="num">01</span> 수집하는 개인정보 항목 및 수집 방법</h2>
+    <p>회사는 견적 상담 및 문의 응대를 위해 웹사이트의 견적 문의 폼을 통해 아래와 같은 개인정보를 수집합니다.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:22%">구분</th><th>수집 항목</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="req">필수</span></td>
+            <td>기관/업체명, 담당자 성함, 연락처</td>
+          </tr>
+          <tr>
+            <td>선택</td>
+            <td>이메일, 발주처 유형, 행사 유형, 행사 일자·인원·장소, 예산, 특수 요건(할랄·채식·알레르기 등), 문의 내용</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>수집 방법</h3>
+    <ul>
+      <li>웹사이트 CONTACT 견적 문의 폼을 통한 이용자의 자발적 입력</li>
+      <li>이메일·전화 등을 통한 상담 과정에서 이용자가 직접 제공하는 정보</li>
+    </ul>
+  </section>
+
+  <!-- 2 -->
+  <section class="clause">
+    <h2><span class="num">02</span> 개인정보의 수집·이용 목적</h2>
+    <p>회사는 수집한 개인정보를 다음의 목적으로만 이용하며, 목적이 변경되는 경우 별도의 동의를 받는 등 필요한 조치를 이행합니다.</p>
+    <ul>
+      <li><b>견적 상담 및 회신</b> — 문의 내용 확인, 맞춤 견적 산출 및 안내</li>
+      <li><b>문의 응대</b> — 담당자 연락, 행사 요건 협의 및 후속 커뮤니케이션</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section class="clause">
+    <h2><span class="num">03</span> 개인정보의 보유 및 이용 기간</h2>
+    <p>
+      회사는 원칙적으로 개인정보 수집·이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.
+      다만 문의 이력 관리 및 재문의 응대를 위하여 문의 목적 달성 후
+      <span class="ph">[1년]</span> 동안 보관한 뒤 파기합니다.
+      <span class="ph">[보유 기간은 실제 운영 정책 및 관련 법령에 따라 검토가 필요합니다.]</span>
+    </p>
+    <p>
+      관계 법령에 따라 보존할 필요가 있는 경우, 회사는 해당 법령에서 정한 기간 동안 개인정보를 보관합니다.
+    </p>
+  </section>
+
+  <!-- 4 -->
+  <section class="clause">
+    <h2><span class="num">04</span> 개인정보의 제3자 제공</h2>
+    <p>
+      회사는 정보주체의 개인정보를 본 방침의 「수집·이용 목적」 범위 내에서만 처리하며,
+      원칙적으로 정보주체의 별도 동의 없이 개인정보를 외부에 제공하지 않습니다.
+    </p>
+    <p>다만 다음의 경우에는 예외로 합니다.</p>
+    <ul>
+      <li>정보주체로부터 사전에 동의를 받은 경우</li>
+      <li>법령의 규정에 의하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section class="clause">
+    <h2><span class="num">05</span> 개인정보 처리의 위탁</h2>
+    <p>
+      현재 회사는 개인정보 처리 업무를 외부에 위탁하고 있지 않습니다. 다만 향후 원활한 서비스 제공을 위하여
+      아래와 같은 업무를 외부 전문 업체에 위탁할 수 있으며, 이 경우 위탁 계약 시 개인정보가 안전하게 관리될 수 있도록
+      관련 사항을 규정하고 본 방침을 통해 사전에 공개하겠습니다.
+    </p>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:38%">위탁 업무(예정)</th><th>내용</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>이메일 발송</td><td>견적 회신 및 안내 메일 발송</td></tr>
+          <tr><td>웹호스팅</td><td>웹사이트 운영 및 데이터 보관</td></tr>
+          <tr><td>방문분석(웹 분석)</td><td>웹사이트 이용 통계 분석</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      위 위탁 업무 중 일부는 해외에 서버를 둔 서비스(예: 클라우드 이메일·호스팅·분석 도구)를 이용하게 될 경우
+      개인정보의 <b>국외 이전</b>이 발생할 수 있습니다. 회사는 현재 이러한 서비스 도입을 준비하는 단계이며,
+      실제 도입 시 이전받는 자, 이전 국가, 이전 항목·목적·보유 기간 등을 본 방침에 명확히 고지하고
+      필요한 동의 절차를 이행하겠습니다.
+    </p>
+  </section>
+
+  <!-- 6 -->
+  <section class="clause">
+    <h2><span class="num">06</span> 정보주체(이용자)의 권리·의무 및 행사 방법</h2>
+    <p>정보주체는 회사에 대해 언제든지 다음과 같은 개인정보 보호 관련 권리를 행사할 수 있습니다.</p>
+    <ul>
+      <li>개인정보 <b>열람</b> 요구</li>
+      <li>오류 등이 있을 경우 <b>정정</b> 요구</li>
+      <li>개인정보 <b>삭제</b> 요구</li>
+      <li>개인정보 <b>처리정지</b> 요구</li>
+    </ul>
+    <p>
+      권리 행사는 개인정보 보호책임자에게 서면, 전화, 이메일 등을 통하여 하실 수 있으며,
+      회사는 이에 대해 지체 없이 조치하겠습니다. 정보주체가 개인정보의 오류에 대한 정정을 요청한 경우,
+      회사는 정정을 완료하기 전까지 해당 개인정보를 이용하거나 제공하지 않습니다.
+    </p>
+    <p>
+      정보주체는 법정대리인이나 위임을 받은 자 등 대리인을 통하여 권리를 행사할 수 있으며,
+      이 경우 위임장을 제출하여야 합니다.
+    </p>
+  </section>
+
+  <!-- 7 -->
+  <section class="clause">
+    <h2><span class="num">07</span> 개인정보의 파기 절차 및 방법</h2>
+    <p>
+      회사는 개인정보 보유 기간의 경과, 처리 목적 달성 등 개인정보가 불필요하게 되었을 때에는
+      지체 없이 해당 개인정보를 파기합니다.
+    </p>
+    <h3>파기 절차</h3>
+    <ul>
+      <li>파기 사유가 발생한 개인정보를 선정하고, 개인정보 보호책임자의 승인을 받아 파기합니다.</li>
+    </ul>
+    <h3>파기 방법</h3>
+    <ul>
+      <li><b>전자적 파일</b> — 복구 및 재생이 불가능하도록 안전한 기술적 방법을 사용하여 삭제합니다.</li>
+      <li><b>종이 문서</b> — 분쇄기로 분쇄하거나 소각하여 파기합니다.</li>
+    </ul>
+  </section>
+
+  <!-- 8 -->
+  <section class="clause">
+    <h2><span class="num">08</span> 개인정보의 안전성 확보 조치</h2>
+    <p>회사는 개인정보의 안전성 확보를 위하여 다음과 같은 조치를 취하고 있습니다.</p>
+    <ul>
+      <li><b>관리적 조치</b> — 개인정보 취급자 최소화 및 접근 권한 관리, 내부 관리 원칙 수립</li>
+      <li><b>기술적 조치</b> — 개인정보에 대한 접근 통제, 전송 구간 암호화(HTTPS) 적용, 접근 기록 관리</li>
+      <li><b>물리적 조치</b> — 개인정보가 보관된 자료 및 문서에 대한 접근 통제</li>
+    </ul>
+  </section>
+
+  <!-- 9 -->
+  <section class="clause">
+    <h2><span class="num">09</span> 개인정보 보호책임자</h2>
+    <p>
+      회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 문의·불만 처리 및
+      피해 구제를 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
+    </p>
+    <div class="contact-card">
+      <dl>
+        <dt>개인정보 보호책임자</dt>
+        <dd>변정은 (대표)</dd>
+        <dt>이메일</dt>
+        <dd><a href="mailto:bje1457@naver.com">bje1457@naver.com</a></dd>
+        <dt>전화</dt>
+        <dd><a href="tel:010-2388-1457">010-2388-1457</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="clause">
+    <h2><span class="num">10</span> 개인정보처리방침의 변경</h2>
+    <p>
+      본 개인정보처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경 내용의 추가·삭제 및 정정이 있는 경우에는
+      변경 사항의 시행 7일 전부터 웹사이트 공지사항(또는 본 페이지)을 통하여 고지할 것입니다.
+    </p>
+    <div class="effective">
+      <p><b>공고일자:</b> 2026년 7월 11일</p>
+      <p><b>시행일자:</b> 2026년 7월 11일</p>
+    </div>
+  </section>
+
+  <div class="notice" style="margin-top:.5rem;margin-bottom:0">
+    <strong>⚠ 다시 한번 안내드립니다</strong>
+    <p>본 방침은 표준 템플릿을 기반으로 작성된 초안이며, 실제 시행 전 반드시 법무·행정 전문가의 검토를 받으시기 바랍니다.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="fwrap">
+    <div class="flogo">더 신라 <b>테이블</b> · THE SILLA TABLE</div>
+    <p>
+      대표 변정은
+      <span class="sep">|</span>
+      사업자등록번호 <span class="ph">[사업자등록번호]</span>
+      <span class="sep">|</span>
+      경상북도 경주시 원효로 154-15 1층
+    </p>
+    <p style="margin-top:.35rem">
+      <a href="mailto:bje1457@naver.com">bje1457@naver.com</a>
+      <span class="sep">|</span>
+      <a href="tel:010-2388-1457">010-2388-1457</a>
+      <span class="sep">|</span>
+      <a href="index.html">홈으로</a>
+    </p>
+    <p style="margin-top:.7rem;opacity:.7">© 2026 THE SILLA TABLE. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
