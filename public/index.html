@@ -198,6 +198,19 @@
   .case h3{font-family:var(--serif);font-size:1.18rem;color:var(--espresso);margin-bottom:.6rem;font-weight:500}
   .case p{font-size:.88rem;color:var(--cocoa);font-weight:300}
   .case .meta{display:flex;gap:1.1rem;margin-top:1.1rem;font-size:.8rem;color:var(--clay);font-weight:400;font-family:var(--lat);letter-spacing:.04em}
+  /* Signature events (APEC / LG) */
+  .event-block{margin-top:2.6rem;padding-top:2.6rem;border-top:1px solid var(--line)}
+  .event-block.first{border-top:0;margin-top:1.4rem;padding-top:0}
+  .event-intro{max-width:800px;margin-bottom:1.5rem}
+  .ev-badge{display:inline-block;font-family:var(--lat);letter-spacing:.16em;font-size:.82rem;text-transform:uppercase;color:var(--clay);border:1px solid var(--line-2);border-radius:999px;padding:.35rem 1rem;margin-bottom:.9rem}
+  .event-intro h3{font-family:var(--serif);font-size:1.45rem;color:var(--espresso);margin-bottom:.6rem;font-weight:500}
+  .event-intro p{color:var(--cocoa);font-weight:300}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow-sm)}
+  .gallery img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;transition:.5s}
+  .gallery figure:hover img{transform:scale(1.04)}
+  @media(max-width:820px){.gallery{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.gallery{grid-template-columns:1fr}}
 
   /* ===== Field notes ===== */
   .note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
@@ -408,7 +421,7 @@
   <div class="wrap about-grid">
     <div class="about-visual reveal">
       <div class="about-frame">
-        <img src="images/KakaoTalk_20260407_160826767_08.jpg" alt="더 신라 테이블 행사 현장 세팅">
+        <img src="images/KakaoTalk_20250329_001502868_01.jpg" alt="더 신라 테이블 헤리티지 케이터링 상차림">
         <div class="q">“음식을 넘어,<br>행사의 격(格)을<br>완성합니다.”</div>
       </div>
       <div class="about-badge"><b>30년 경력 셰프의 손끝</b><span>수비드·콩피 등 사전 생산 안정 조리법으로 대량 행사에도 균일한 품질을 구현합니다.</span></div>
@@ -483,6 +496,47 @@
       <span class="logo-chip">경북도청</span>
       <span class="logo-chip">○○ 대학교 학술제</span>
       <span class="logo-chip">MICE 에이전시 ○○</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Signature Events (APEC / LG) ===== -->
+<section class="sec" id="signature">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Signature Events</p>
+      <h2>APEC 2025 · LG전자 — 대규모 행사 실적</h2>
+      <div class="divider"></div>
+      <p style="margin-top:1rem">경주화백컨벤션센터(HICO) 공식 협력사이자 회원사로서 수행한 국가·대기업 규모의 행사입니다.</p>
+    </div>
+
+    <div class="event-block first reveal">
+      <div class="event-intro">
+        <span class="ev-badge">APEC 2025 · 경주화백컨벤션센터</span>
+        <h3>APEC 2025 미디어센터 기자단 식사 제공</h3>
+        <p>2025년 10월 경주에서 열린 APEC 기간, 미디어센터에 상주한 국내외 기자단에게 식사를 제공했습니다. 한식과 신라의 음식 유산을 전통 한과 상차림과 함께 정성껏 선보였습니다.</p>
+      </div>
+      <div class="gallery">
+        <figure><img src="images/apec-2025-3.jpg" alt="APEC 2025 미디어센터에 차려진 전통 한과 상차림" loading="lazy"></figure>
+        <figure><img src="images/apec-2025-6.jpg" alt="APEC 2025 미디어센터 기자단을 위한 불고기 뷔페 라인" loading="lazy"></figure>
+        <figure><img src="images/apec-2025-5.jpg" alt="APEC 2025 미디어센터 온식 뷔페 세팅" loading="lazy"></figure>
+        <figure><img src="images/apec-2025-1.jpg" alt="APEC 2025 미디어센터 디저트·과일 상차림" loading="lazy"></figure>
+        <figure><img src="images/apec-2025-2.jpg" alt="APEC 2025 미디어센터 타르트·딸기 디저트 상차림" loading="lazy"></figure>
+        <figure><img src="images/apec-2025-4.jpg" alt="APEC 2025 미디어센터 뷔페 구성" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <div class="event-block reveal">
+      <div class="event-intro">
+        <span class="ev-badge">LG전자 · 경주화백컨벤션센터</span>
+        <h3>LG전자 리더십 행사 케이터링 (약 400명)</h3>
+        <p>2024년과 2026년 두 차례에 걸쳐 경주화백컨벤션센터에서 열린 LG전자 리더십 행사(약 400명)의 케이터링을 진행했습니다. 대규모 인원에도 흐트러짐 없는 준비와 현장 운영으로 행사를 뒷받침했습니다.</p>
+      </div>
+      <div class="gallery">
+        <figure><img src="images/lg-2026-2.jpg" alt="LG전자 리더십 행사 디저트 뷔페 (2026)" loading="lazy"></figure>
+        <figure><img src="images/lg-2026-1.jpg" alt="LG전자 리더십 행사 디저트 테이블 (2026)" loading="lazy"></figure>
+        <figure><img src="images/lg-2024-1.jpg" alt="LG전자 리더십 행사 디저트 상차림 (2024)" loading="lazy"></figure>
+      </div>
     </div>
   </div>
 </section>
