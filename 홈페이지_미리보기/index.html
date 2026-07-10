@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>더 신라 테이블 | 학회·기업·관공서 MICE 케이터링·단체도시락</title>
+<meta name="description" content="천년 고도 경주의 품격을 담은 프리미엄 MICE 케이터링·단체도시락. 학회·기업·관공서 대규모 행사 전문. 30년 경력 셰프의 사전 생산 안정성과 헤리티지 스토리텔링.">
+<meta property="og:title" content="더 신라 테이블 | MICE 케이터링·단체도시락">
+<meta property="og:description" content="학회·기업·관공서 대규모 행사 케이터링 전문. 경주·신라 헤리티지 프리미엄.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101d38;
+    --navy-2:#18294a;
+    --navy-deep:#0a1428;
+    --gold:#c6a15b;
+    --gold-2:#b8924a;
+    --gold-soft:#dcc188;
+    --ivory:#f8f4ec;
+    --ivory-2:#efe7d7;
+    --ivory-3:#e6dcc7;
+    --ink:#1c2233;
+    --muted:#71768a;
+    --line:rgba(198,161,91,.28);
+    --serif:'Noto Serif KR', serif;
+    --sans:'Noto Sans KR', sans-serif;
+    --lat:'Cormorant Garamond', serif;
+    --shadow:0 20px 60px rgba(10,20,40,.13);
+    --shadow-sm:0 10px 30px rgba(10,20,40,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--ivory);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold);color:#1a1405}
+  .wrap{width:min(1180px,92%);margin:0 auto}
+  .eyebrow{font-family:var(--lat);letter-spacing:.3em;text-transform:uppercase;font-size:.84rem;color:var(--gold);font-weight:600}
+  .serif{font-family:var(--serif)}
+  section{position:relative}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:500;font-size:.98rem;padding:.95em 1.95em;border-radius:3px;transition:.28s cubic-bezier(.2,.7,.2,1);cursor:pointer;border:1px solid transparent;letter-spacing:.01em}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1405;box-shadow:0 12px 28px rgba(198,161,91,.34)}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(198,161,91,.42)}
+  .btn-outline{border-color:rgba(248,244,236,.45);color:var(--ivory)}
+  .btn-outline:hover{background:rgba(248,244,236,.1);border-color:var(--gold-soft)}
+  .btn-ghost{border-color:var(--gold);color:var(--navy)}
+  .btn-ghost:hover{background:var(--gold);color:#1a1405}
+
+  /* ===== Topbar ===== */
+  .topbar{background:var(--navy-deep);color:rgba(248,244,236,.7);font-size:.8rem;letter-spacing:.02em;padding:.5rem 0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem}
+  .topbar b{color:var(--gold-soft)}
+
+  /* ===== Header ===== */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.35s}
+  header.solid{background:rgba(10,20,40,.95);backdrop-filter:blur(10px);box-shadow:0 2px 34px rgba(0,0,0,.28)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1.05rem 0}
+  .logo{font-family:var(--serif);font-weight:700;font-size:1.4rem;color:var(--ivory);letter-spacing:.03em;line-height:1}
+  .logo b{color:var(--gold)}
+  .logo small{display:block;font-family:var(--lat);font-size:.64rem;letter-spacing:.34em;color:var(--gold-soft);font-weight:600;margin-top:4px}
+  .menu{display:flex;gap:2.1rem;align-items:center}
+  .menu a{color:var(--ivory);font-size:.95rem;font-weight:400;opacity:.92;position:relative}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:0;background:var(--gold);transition:.3s}
+  .menu a:hover::after{width:100%}
+  .nav-lang{color:var(--gold-soft);font-family:var(--lat);letter-spacing:.16em;font-size:.88rem;cursor:pointer}
+  .nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1405;padding:.62em 1.35em;border-radius:3px;font-weight:500;font-size:.9rem;transition:.25s}
+  .nav-cta:hover{transform:translateY(-2px)}
+  .hamb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+  .hamb span{width:26px;height:2px;background:var(--ivory);transition:.3s}
+
+  /* ===== Hero ===== */
+  .hero{min-height:100vh;display:flex;align-items:center;color:var(--ivory);overflow:hidden;
+    background:
+      linear-gradient(180deg,rgba(8,15,32,.58) 0%,rgba(8,15,32,.7) 55%,rgba(8,15,32,.92) 100%),
+      radial-gradient(130% 100% at 72% 18%,#274672 0%,#152a52 42%,#0a1631 100%);}
+  .hero::before{content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(198,161,91,.09) 1px,transparent 1px);background-size:28px 28px;opacity:.55}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(60% 60% at 80% 30%,rgba(198,161,91,.14),transparent 70%);animation:glow 9s ease-in-out infinite alternate}
+  @keyframes glow{from{opacity:.5;transform:scale(1)}to{opacity:1;transform:scale(1.15)}}
+  .hero-inner{position:relative;z-index:2;padding-top:5rem}
+  .hero .eyebrow{opacity:0;animation:rise .9s .2s forwards}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.35rem,5.5vw,4.4rem);line-height:1.26;margin:1.2rem 0 1.5rem;opacity:0;animation:rise .9s .35s forwards;letter-spacing:-.01em}
+  .hero h1 em{font-style:normal;color:var(--gold-soft);position:relative}
+  .hero p.lead{font-size:clamp(1rem,1.55vw,1.22rem);font-weight:300;max-width:650px;color:rgba(248,244,236,.87);opacity:0;animation:rise .9s .5s forwards}
+  .hero-cta{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;opacity:0;animation:rise .9s .65s forwards}
+  .hero-stats{display:flex;gap:0;margin-top:3.6rem;flex-wrap:wrap;opacity:0;animation:rise .9s .8s forwards}
+  .hero-stats .st{padding-right:2.6rem;margin-right:2.6rem;border-right:1px solid rgba(198,161,91,.3)}
+  .hero-stats .st:last-child{border:none;margin:0;padding:0}
+  .hero-stats .st b{font-family:var(--lat);font-size:2.6rem;color:var(--gold);font-weight:600;display:block;line-height:1}
+  .hero-stats .st span{font-size:.86rem;color:rgba(248,244,236,.76);letter-spacing:.02em}
+  .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(248,244,236,.55);font-family:var(--lat);letter-spacing:.26em;font-size:.72rem;text-align:center}
+  .scroll-hint::after{content:"";display:block;width:1px;height:36px;background:linear-gradient(var(--gold),transparent);margin:8px auto 0;animation:pulse 2s infinite}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+  /* ===== Section shell ===== */
+  .sec{padding:7rem 0}
+  .sec-head{text-align:center;max-width:730px;margin:0 auto 3.6rem}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.85rem,3.5vw,2.65rem);margin:.8rem 0 1.1rem;color:var(--navy);letter-spacing:-.01em}
+  .sec-head p{color:var(--muted)}
+  .divider{width:48px;height:2px;background:var(--gold);margin:0 auto;position:relative}
+  .divider::before,.divider::after{content:"";position:absolute;top:50%;width:5px;height:5px;background:var(--gold);border-radius:50%;transform:translateY(-50%)}
+  .divider::before{left:-12px}.divider::after{right:-12px}
+
+  /* ===== Services ===== */
+  .bg-navy{background:var(--navy);color:var(--ivory)}
+  .bg-navy .sec-head h2{color:var(--ivory)}
+  .bg-navy .sec-head p{color:rgba(248,244,236,.72)}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+  .svc{background:rgba(248,244,236,.045);border:1px solid var(--line);border-radius:5px;padding:2.3rem 1.7rem;transition:.35s;position:relative;overflow:hidden}
+  .svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-soft));transform:scaleX(0);transform-origin:left;transition:.45s}
+  .svc:hover{background:rgba(248,244,236,.08);transform:translateY(-7px);border-color:rgba(198,161,91,.5)}
+  .svc:hover::before{transform:scaleX(1)}
+  .svc .ic{font-size:2rem;margin-bottom:1.1rem}
+  .svc h3{font-family:var(--serif);font-size:1.22rem;color:var(--ivory);margin-bottom:.6rem}
+  .svc p{font-size:.9rem;color:rgba(248,244,236,.7);font-weight:300}
+  .svc ul{list-style:none;margin:1rem 0 0;padding:0}
+  .svc ul li{font-size:.82rem;color:rgba(248,244,236,.6);padding-left:1.1em;position:relative;margin-bottom:.2em}
+  .svc ul li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+  .svc .more{display:inline-block;margin-top:1.2rem;color:var(--gold-soft);font-family:var(--lat);letter-spacing:.15em;font-size:.82rem}
+
+  /* ===== About ===== */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.4rem;align-items:center}
+  .about-visual{position:relative;border-radius:8px;overflow:hidden;min-height:440px;
+    background:linear-gradient(150deg,#25406c,#0e1d3b);box-shadow:var(--shadow)}
+  .about-visual::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(198,161,91,.12) 1px,transparent 1px);background-size:24px 24px}
+  .about-visual .badge{position:absolute;bottom:22px;left:22px;right:22px;background:rgba(10,20,40,.72);backdrop-filter:blur(4px);border:1px solid var(--line);border-radius:6px;padding:1.2rem 1.4rem;color:var(--ivory)}
+  .about-visual .badge b{font-family:var(--serif);color:var(--gold-soft);font-size:1.05rem}
+  .about-visual .quote{position:absolute;top:34px;left:28px;right:28px;font-family:var(--serif);font-size:1.5rem;color:rgba(248,244,236,.95);line-height:1.5}
+  .about-visual .quote span{color:var(--gold-soft)}
+  .about-text .eyebrow{margin-bottom:.7rem;display:block}
+  .about-text h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);color:var(--navy);margin-bottom:1.3rem;line-height:1.4}
+  .about-text p{color:#4c5165;margin-bottom:1.1rem}
+  .about-certs{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.6rem}
+  .cert-chip{background:#fff;border:1px solid var(--ivory-3);border-radius:4px;padding:.6em 1.1em;font-size:.85rem;color:var(--navy);box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:.4em}
+  .cert-chip .d{color:var(--gold)}
+
+  /* ===== Timeline ===== */
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:4rem}
+  .tl{text-align:center;position:relative;padding-top:1.6rem}
+  .tl::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(198,161,91,.18)}
+  .tl .yr{font-family:var(--lat);font-size:1.5rem;color:var(--gold-2);font-weight:600}
+  .tl p{font-size:.88rem;color:var(--muted);margin-top:.3rem}
+
+  /* ===== Differentiators ===== */
+  .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+  .diff{background:#fff;border-radius:7px;padding:2.3rem;box-shadow:var(--shadow-sm);border-top:3px solid var(--gold);transition:.3s}
+  .diff:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .diff .num{font-family:var(--lat);font-size:1.15rem;color:var(--gold);letter-spacing:.2em;font-weight:600}
+  .diff h3{font-family:var(--serif);font-size:1.27rem;margin:.6rem 0 .7rem;color:var(--navy)}
+  .diff p{font-size:.93rem;color:var(--muted)}
+
+  /* ===== Process ===== */
+  .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  .proc{text-align:center;padding:2rem 1.3rem;background:rgba(248,244,236,.04);border:1px solid var(--line);border-radius:6px;transition:.3s}
+  .proc:hover{background:rgba(248,244,236,.07);transform:translateY(-5px)}
+  .proc .step{font-family:var(--lat);font-size:.8rem;letter-spacing:.24em;color:var(--gold);font-weight:600}
+  .proc .pic{font-size:1.9rem;margin:.7rem 0}
+  .proc h3{font-family:var(--serif);font-size:1.1rem;color:var(--ivory);margin-bottom:.5rem}
+  .proc p{font-size:.85rem;color:rgba(248,244,236,.66);font-weight:300}
+
+  /* ===== Logo wall ===== */
+  .logowall{overflow:hidden;padding:2.4rem 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .logo-track{display:flex;gap:1rem;width:max-content;animation:scroll 34s linear infinite}
+  .logowall:hover .logo-track{animation-play-state:paused}
+  .logo-chip{flex:0 0 auto;background:#fff;border:1px solid var(--ivory-2);border-radius:5px;padding:1.1rem 1.95rem;color:var(--navy);font-weight:500;font-size:.95rem;box-shadow:0 6px 18px rgba(10,20,40,.05);white-space:nowrap;font-family:var(--serif)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ===== Portfolio ===== */
+  .filter-bar{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.4rem}
+  .fbtn{padding:.55em 1.3em;border:1px solid var(--ivory-3);background:#fff;border-radius:22px;font-size:.86rem;cursor:pointer;color:var(--muted);transition:.25s}
+  .fbtn.on,.fbtn:hover{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .case{border-radius:7px;overflow:hidden;box-shadow:var(--shadow-sm);background:#fff;cursor:pointer;transition:.35s}
+  .case:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+  .case .thumb{height:220px;position:relative;color:var(--ivory);display:flex;align-items:flex-end;padding:1.4rem;overflow:hidden}
+  .case .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 28%,rgba(8,15,32,.84))}
+  .case .thumb::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:22px 22px}
+  .c1{background:linear-gradient(135deg,#274672,#0e1d3b)}
+  .c2{background:linear-gradient(135deg,#3d3355,#161029)}
+  .c3{background:linear-gradient(135deg,#204340,#0c211f)}
+  .c4{background:linear-gradient(135deg,#4e3d2c,#241a12)}
+  .c5{background:linear-gradient(135deg,#2d314e,#131627)}
+  .c6{background:linear-gradient(135deg,#134150,#08202b)}
+  .case .tag{position:relative;z-index:2;font-family:var(--lat);letter-spacing:.18em;font-size:.74rem;color:var(--gold-soft);text-transform:uppercase}
+  .case .body{padding:1.5rem 1.5rem 1.8rem}
+  .case h3{font-family:var(--serif);font-size:1.16rem;color:var(--navy);margin-bottom:.5rem}
+  .case p{font-size:.88rem;color:var(--muted)}
+  .case .meta{display:flex;gap:1rem;margin-top:1rem;font-size:.8rem;color:var(--gold-2);font-weight:500}
+
+  /* ===== Field notes ===== */
+  .note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .note{background:#fff;border-radius:7px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.3s}
+  .note:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .note .nh{height:158px;background:linear-gradient(135deg,#e7dcc4,#d3c39c);position:relative}
+  .note .nh::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.25) 1px,transparent 1px);background-size:18px 18px}
+  .note .nb{padding:1.5rem}
+  .note .date{font-family:var(--lat);letter-spacing:.15em;color:var(--gold-2);font-size:.8rem}
+  .note h3{font-family:var(--serif);font-size:1.08rem;color:var(--navy);margin:.5rem 0}
+  .note p{font-size:.85rem;color:var(--muted)}
+
+  /* ===== FAQ ===== */
+  .faq-wrap{max-width:820px;margin:0 auto}
+  .faq{background:#fff;border:1px solid var(--ivory-3);border-radius:6px;margin-bottom:.8rem;overflow:hidden;transition:.3s}
+  .faq summary{padding:1.3rem 1.6rem;font-family:var(--serif);font-size:1.05rem;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:var(--lat);font-size:1.5rem;color:var(--gold);transition:.3s;flex-shrink:0}
+  .faq[open] summary::after{transform:rotate(45deg)}
+  .faq .fa{padding:0 1.6rem 1.4rem;color:var(--muted);font-size:.92rem}
+  .faq[open]{box-shadow:var(--shadow-sm);border-color:var(--line)}
+
+  /* ===== CTA banner ===== */
+  .cta-band{background:linear-gradient(120deg,var(--navy-deep),var(--navy-2));color:var(--ivory);text-align:center;padding:5.5rem 0;position:relative;overflow:hidden}
+  .cta-band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(198,161,91,.1) 1px,transparent 1px);background-size:26px 26px;opacity:.55}
+  .cta-band::after{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 0%,rgba(198,161,91,.14),transparent 70%)}
+  .cta-band .eyebrow{position:relative;z-index:2}
+  .cta-band h2{font-family:var(--serif);font-size:clamp(1.75rem,3.3vw,2.6rem);position:relative;z-index:2;margin-top:.8rem}
+  .cta-band p{position:relative;z-index:2;color:rgba(248,244,236,.8);margin:1rem 0 2rem}
+
+  /* ===== Contact ===== */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3.2rem;align-items:start}
+  .contact-info h2{font-family:var(--serif);font-size:2.1rem;color:var(--navy);margin:.7rem 0 1.2rem}
+  .contact-info .ci-row{display:flex;gap:1rem;padding:1.05rem 0;border-bottom:1px solid var(--ivory-3)}
+  .contact-info .ci-row .ic{color:var(--gold);font-size:1.25rem;width:26px}
+  .contact-info .ci-row b{display:block;color:var(--navy);font-size:.95rem}
+  .contact-info .ci-row span{color:var(--muted);font-size:.88rem}
+  form.quote{background:#fff;border-radius:9px;padding:2.5rem;box-shadow:var(--shadow);border-top:3px solid var(--gold)}
+  form.quote h3{font-family:var(--serif);font-size:1.35rem;color:var(--navy);margin-bottom:.4rem}
+  form.quote .fsub{color:var(--muted);font-size:.86rem;margin-bottom:1.6rem}
+  .field{margin-bottom:1.05rem}
+  .field label{display:block;font-size:.83rem;font-weight:500;color:var(--navy);margin-bottom:.4rem}
+  .field label .req{color:var(--gold-2);margin-left:2px}
+  .field input,.field select,.field textarea{width:100%;padding:.82em .95em;border:1px solid #dcd6ca;border-radius:5px;font-family:var(--sans);font-size:.92rem;background:var(--ivory);color:var(--ink);transition:.2s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(198,161,91,.16)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem}
+  .chip{padding:.5em .95em;border:1px solid #dcd6ca;border-radius:20px;font-size:.82rem;cursor:pointer;background:var(--ivory);transition:.2s;user-select:none}
+  .chip.on{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+  .consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.82rem;color:var(--muted);margin:.4rem 0 1.2rem}
+  .consent a{color:var(--gold-2);text-decoration:underline}
+  .form-note{font-size:.78rem;color:var(--muted);margin-top:.9rem;text-align:center}
+  .form-ok{display:none;text-align:center;padding:2.2rem}
+  .form-ok.show{display:block}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy-deep);color:rgba(248,244,236,.72);padding:3.6rem 0 2rem;font-size:.86rem}
+  .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(248,244,236,.1)}
+  footer .logo{margin-bottom:.9rem}
+  .foot-biz{line-height:1.95;max-width:520px}
+  .foot-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+  .foot-links a{color:var(--gold-soft);transition:.2s}
+  .foot-links a:hover{color:var(--gold)}
+  .foot-bottom{padding-top:1.4rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:rgba(248,244,236,.5)}
+
+  /* ===== Quick buttons ===== */
+  .quick{position:fixed;right:20px;bottom:24px;z-index:90;display:flex;flex-direction:column;gap:10px}
+  .quick a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 8px 22px rgba(0,0,0,.24);transition:.25s;position:relative}
+  .quick a:hover{transform:scale(1.09) translateY(-2px)}
+  .q-kakao{background:#FEE500}
+  .q-naver{background:#03C75A;color:#fff;font-weight:700;font-family:var(--sans);font-size:1rem}
+  .q-tel{background:var(--navy);color:var(--gold)}
+  .q-insta{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+  .q-quote{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#1a1405;font-weight:600;font-size:.72rem;flex-direction:column;line-height:1}
+
+  /* ===== Reveal ===== */
+  .reveal{opacity:0;transform:translateY(30px);transition:.85s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== Responsive ===== */
+  @media(max-width:960px){
+    .svc-grid,.proc-grid{grid-template-columns:1fr 1fr}
+    .diff-grid,.case-grid,.note-grid{grid-template-columns:1fr 1fr}
+    .about-grid,.contact-grid{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr 1fr;gap:2rem}
+  }
+  @media(max-width:640px){
+    .menu{display:none}
+    .hamb{display:flex}
+    .svc-grid,.diff-grid,.case-grid,.note-grid,.row2,.proc-grid{grid-template-columns:1fr}
+    .hero-stats{gap:0}
+    .hero-stats .st{padding-right:1.4rem;margin-right:1.4rem}
+    .sec{padding:4.8rem 0}
+    .nav-lang{display:none}
+    .topbar .wrap{justify-content:center;font-size:.72rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Topbar ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <span>📍 경상북도 경주 · 대구·경북 전 지역 출장 케이터링</span>
+    <span>대표문의 <b>010-2388-1457</b> · 평일 09:00–18:00</span>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header id="hdr">
+  <div class="wrap nav">
+    <div class="logo">더 신라 <b>테이블</b><small>THE SILLA TABLE</small></div>
+    <nav class="menu">
+      <a href="#about">브랜드</a>
+      <a href="#services">서비스</a>
+      <a href="#references">레퍼런스</a>
+      <a href="#process">진행안내</a>
+      <a href="#notes">현장스케치</a>
+      <a href="#contact">견적문의</a>
+      <span class="nav-lang">KO / EN</span>
+      <a href="#contact" class="nav-cta">온라인 견적</a>
+    </nav>
+    <div class="hamb" onclick="document.querySelector('.menu').style.display='flex'">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">MICE Catering · Group Lunchbox · Heritage Dining</p>
+    <h1>천년 고도의 품격을<br><em>한 상</em>에 담다</h1>
+    <p class="lead">학회부터 기업·관공서 행사까지 — 수백에서 수천 명 규모의 대규모 행사를 안심하고 맡길 수 있는 프리미엄 케이터링. 30년 경력 셰프의 사전 생산 안정성과 경주·신라 헤리티지로 완성합니다.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-gold">무료 견적 문의 →</a>
+      <a href="#services" class="btn btn-outline">서비스 살펴보기</a>
+    </div>
+    <div class="hero-stats">
+      <div class="st"><b>30<span style="font-size:1.1rem">년</span></b><span>셰프 조리 경력</span></div>
+      <div class="st"><b>2,000<span style="font-size:1.1rem">명+</span></b><span>단일 행사 최대 규모</span></div>
+      <div class="st"><b>100<span style="font-size:1.1rem">%</span></b><span>정시 납품 원칙</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="sec bg-navy" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Our Services</p>
+      <h2>행사의 성격에 맞춘 네 가지 케이터링</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="ic">🍽️</div>
+        <h3>MICE·행사 케이터링</h3>
+        <p>학회·기업·관공서 출장 케이터링. 현장 세팅부터 운영 인력, 사후 정리까지 원스톱으로 제공합니다.</p>
+        <ul><li>뷔페 / 핑거푸드 / 플레이팅</li><li>현장 세팅·운영 인력 포함</li><li>수백~수천 명 규모 대응</li></ul>
+        <span class="more">VIEW MORE →</span>
+      </div>
+      <div class="svc reveal">
+        <div class="ic">🎁</div>
+        <h3>단체도시락 / 프리미엄 도시락</h3>
+        <p>다일정 학회에 최적화된 사전 생산 안정 메뉴. 대량 납품에도 품질과 정시성을 유지합니다.</p>
+        <ul><li>다일정·다품목 구성</li><li>정시 납품·위생 관리</li><li>프리미엄 도시락 라인</li></ul>
+        <span class="more">VIEW MORE →</span>
+      </div>
+      <div class="svc reveal">
+        <div class="ic">🏛️</div>
+        <h3>헤리티지 다이닝 · 프라이빗</h3>
+        <p>예약제 프리미엄 다이닝과 기업 MICE 만찬. 신라 헤리티지를 담은 특별한 연출로 격을 완성합니다.</p>
+        <ul><li>예약제 프라이빗 다이닝</li><li>기업 만찬·의전 행사</li><li>공간·스토리 연출</li></ul>
+        <span class="more">VIEW MORE →</span>
+      </div>
+      <div class="svc reveal">
+        <div class="ic">🥢</div>
+        <h3>쿠킹클래스 · 문화 체험</h3>
+        <p>외국인·단체 대상 체험 프로그램. 지역 문화와 미식을 결합한 인바운드 콘텐츠를 운영합니다.</p>
+        <ul><li>외국인·단체 체험</li><li>다국어·특수식이 대응</li><li>지역 문화 연계</li></ul>
+        <span class="more">VIEW MORE →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <div class="quote">“음식을 넘어,<br>행사의 <span>격(格)</span>을<br>완성합니다.”</div>
+      <div class="badge"><b>30년 경력 셰프의 손끝</b><br><span style="font-size:.85rem;color:rgba(248,244,236,.7)">수비드·콩피 등 사전 생산 안정 조리법으로 대량 행사에도 균일한 품질을 구현합니다.</span></div>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2>천년 고도 경주에서<br>시작된 케이터링의 격</h2>
+      <p>더 신라 테이블은 경주·신라의 문화적 깊이를 미식으로 풀어내는 프리미엄 케이터링 브랜드입니다. 단순히 음식을 제공하는 것을 넘어, 행사의 목적과 격에 맞는 경험을 설계합니다.</p>
+      <p>약 30년간 현장을 지켜온 셰프의 조리 전문성과, 대규모 행사의 물류·인력·동선을 아는 운영 역량을 결합해 학회·기업·관공서의 크고 작은 행사를 안정적으로 수행해 왔습니다.</p>
+      <p>특히 사전 생산 안정성이 높은 조리 기법으로 수천 명 규모의 다일정 행사에서도 품질과 정시 납품을 지켜, 발주 담당자가 안심하고 맡길 수 있는 파트너를 지향합니다.</p>
+      <div class="about-certs">
+        <span class="cert-chip"><span class="d">◆</span> 여성기업 인증</span>
+        <span class="cert-chip"><span class="d">◆</span> 위생·안전 관리</span>
+        <span class="cert-chip"><span class="d">◆</span> 관공서 견적·증빙 대응</span>
+        <span class="cert-chip"><span class="d">◆</span> 다국어·특수식이</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="timeline">
+      <div class="tl reveal"><div class="yr">1994</div><p>셰프 조리 경력 시작</p></div>
+      <div class="tl reveal"><div class="yr">2010s</div><p>대규모 학회·기업 행사 수행 본격화</p></div>
+      <div class="tl reveal"><div class="yr">2020s</div><p>인바운드·특수식이 대응 역량 구축</p></div>
+      <div class="tl reveal"><div class="yr">2026</div><p>헤리티지 다이닝·브랜드 통합</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Differentiators ===== -->
+<section class="sec" style="background:var(--ivory-2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Why The Silla Table</p>
+      <h2>대규모 행사를 안심하고 맡기는 이유</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="diff-grid">
+      <div class="diff reveal"><div class="num">01</div><h3>대규모 B2B 실행 역량</h3><p>학회·기업·관공서 수백~수천 명 규모 행사를 수행한 레퍼런스. 대형 행사의 물류·인력·동선을 아는 팀이 움직입니다.</p></div>
+      <div class="diff reveal"><div class="num">02</div><h3>사전 생산 안정성</h3><p>수비드·콩피 등 사전 생산 안정성이 높은 대량 조리 기법으로, 많은 인원에도 균일한 품질과 정시 납품을 보장합니다.</p></div>
+      <div class="diff reveal"><div class="num">03</div><h3>경주·신라 헤리티지</h3><p>천년 고도의 문화를 담은 메뉴와 연출. 단순한 식사가 아닌, 행사에 스토리와 품격을 더하는 차별화된 경험입니다.</p></div>
+      <div class="diff reveal"><div class="num">04</div><h3>30년 셰프 전문성</h3><p>약 30년 경력 셰프의 조리 전문성. 프리미엄 급의 완성도를 대량 행사에서도 그대로 구현합니다.</p></div>
+      <div class="diff reveal"><div class="num">05</div><h3>인바운드·특수식이 대응</h3><p>다국어 응대와 할랄·채식·알레르기 등 특수 식이 요건 대응. 외국인 단체·MICE 에이전시 행사에 강점을 가집니다.</p></div>
+      <div class="diff reveal"><div class="num">06</div><h3>공신력 있는 사업자</h3><p>여성기업 인증 등 공식 자격을 갖춘 사업자. 관공서·공공행사에 필요한 명확한 견적과 증빙을 제공합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Logo wall ===== -->
+<section style="background:var(--ivory-3);padding:3.2rem 0" id="references">
+  <div class="wrap sec-head reveal" style="margin-bottom:1.4rem">
+    <p class="eyebrow">Trusted By</p>
+    <h2 style="font-size:1.65rem">학회 · 기업 · 관공서가 신뢰한 케이터링</h2>
+  </div>
+  <div class="logowall">
+    <div class="logo-track">
+      <span class="logo-chip">○○ 국제학술대회</span>
+      <span class="logo-chip">대한○○학회</span>
+      <span class="logo-chip">경주시청</span>
+      <span class="logo-chip">○○ 글로벌 컨퍼런스</span>
+      <span class="logo-chip">한국○○공단</span>
+      <span class="logo-chip">○○ 그룹 임직원 행사</span>
+      <span class="logo-chip">경북도청</span>
+      <span class="logo-chip">○○ 대학교 학술제</span>
+      <span class="logo-chip">MICE 에이전시 ○○</span>
+      <span class="logo-chip">○○ 국제학술대회</span>
+      <span class="logo-chip">대한○○학회</span>
+      <span class="logo-chip">경주시청</span>
+      <span class="logo-chip">○○ 글로벌 컨퍼런스</span>
+      <span class="logo-chip">한국○○공단</span>
+      <span class="logo-chip">○○ 그룹 임직원 행사</span>
+      <span class="logo-chip">경북도청</span>
+      <span class="logo-chip">○○ 대학교 학술제</span>
+      <span class="logo-chip">MICE 에이전시 ○○</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Portfolio ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Reference Cases</p>
+      <h2>대표 행사 케이스</h2>
+      <div class="divider"></div>
+      <p style="margin-top:1rem">실제 수행한 대규모 행사의 과제와 해결 과정을 케이스로 소개합니다.</p>
+    </div>
+    <div class="filter-bar reveal">
+      <span class="fbtn on" data-f="all" onclick="filterCase(this)">전체</span>
+      <span class="fbtn" data-f="학회" onclick="filterCase(this)">학회</span>
+      <span class="fbtn" data-f="기업" onclick="filterCase(this)">기업</span>
+      <span class="fbtn" data-f="관공서" onclick="filterCase(this)">관공서</span>
+      <span class="fbtn" data-f="인바운드" onclick="filterCase(this)">인바운드</span>
+    </div>
+    <div class="case-grid" id="caseGrid">
+      <div class="case reveal" data-cat="학회">
+        <div class="thumb c1"><span class="tag">학회 · 다일정</span></div>
+        <div class="body"><h3>국제학술대회 3일 단체도시락</h3><p>1,200명 규모, 3일간 매 끼니 다른 구성. 사전 생산으로 정시 납품과 위생을 완벽 관리한 사례.</p><div class="meta"><span>👥 1,200명</span><span>📅 3일</span></div></div>
+      </div>
+      <div class="case reveal" data-cat="기업">
+        <div class="thumb c2"><span class="tag">기업 · 만찬</span></div>
+        <div class="body"><h3>대기업 임직원 시상 만찬</h3><p>브랜드 격에 맞춘 플레이팅 케이터링과 공간 연출로 완성한 800명 규모 프리미엄 만찬.</p><div class="meta"><span>👥 800명</span><span>🍷 플레이팅</span></div></div>
+      </div>
+      <div class="case reveal" data-cat="관공서">
+        <div class="thumb c3"><span class="tag">관공서 · 의전</span></div>
+        <div class="body"><h3>지자체 국제행사 의전 케이터링</h3><p>공신력 있는 견적·증빙과 함께 진행한 관공서 국제행사. 의전 기준에 맞춘 세팅과 운영.</p><div class="meta"><span>👥 500명</span><span>🏛️ 의전</span></div></div>
+      </div>
+      <div class="case reveal" data-cat="인바운드">
+        <div class="thumb c4"><span class="tag">인바운드 · 할랄</span></div>
+        <div class="body"><h3>외국인 단체 헤리티지 다이닝</h3><p>할랄·채식 등 특수 식이를 반영하고 신라 스토리텔링을 더한 인바운드 단체 다이닝.</p><div class="meta"><span>🌏 다국어</span><span>🕌 할랄</span></div></div>
+      </div>
+      <div class="case reveal" data-cat="기업">
+        <div class="thumb c5"><span class="tag">기업 · 출장뷔페</span></div>
+        <div class="body"><h3>신제품 론칭 출장 뷔페</h3><p>현장 세팅부터 운영 인력, 사후 정리까지 원스톱으로 진행한 기업 론칭 행사 케이터링.</p><div class="meta"><span>👥 600명</span><span>🍽️ 뷔페</span></div></div>
+      </div>
+      <div class="case reveal" data-cat="학회">
+        <div class="thumb c6"><span class="tag">학회 · 핑거푸드</span></div>
+        <div class="body"><h3>학술 네트워킹 리셉션</h3><p>격조 있는 핑거푸드와 음료 딜리버리로 완성한 학술대회 리셉션. 동선과 회전율까지 설계.</p><div class="meta"><span>👥 400명</span><span>🥂 리셉션</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process ===== -->
+<section class="sec bg-navy" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How It Works</p>
+      <h2>문의부터 행사 실행까지</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="proc-grid">
+      <div class="proc reveal"><div class="step">STEP 01</div><div class="pic">📝</div><h3>온라인 견적 문의</h3><p>인원·일정·예산·형태를 폼으로 남겨주시면 접수됩니다.</p></div>
+      <div class="proc reveal"><div class="step">STEP 02</div><div class="pic">💬</div><h3>상담 · 맞춤 제안</h3><p>담당자가 1일 이내 연락드리고 행사에 맞는 구성을 제안합니다.</p></div>
+      <div class="proc reveal"><div class="step">STEP 03</div><div class="pic">🍳</div><h3>사전 생산 · 준비</h3><p>메뉴 확정 후 사전 생산·품질 검수로 안정적으로 준비합니다.</p></div>
+      <div class="proc reveal"><div class="step">STEP 04</div><div class="pic">🚚</div><h3>현장 실행 · 정리</h3><p>정시 납품·현장 세팅·운영, 사후 정리까지 책임집니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Field notes ===== -->
+<section class="sec" style="background:var(--ivory-2)" id="notes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Field Notes</p>
+      <h2>현장스케치</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="note-grid">
+      <div class="note reveal"><div class="nh"></div><div class="nb"><span class="date">2026 · 06</span><h3>1,200명 학회 도시락, 어떻게 정시에?</h3><p>대규모 다일정 행사에서 품질과 정시성을 지키는 사전 생산 운영의 실제.</p></div></div>
+      <div class="note reveal"><div class="nh" style="background:linear-gradient(135deg,#d8c8a8,#c2ad83)"></div><div class="nb"><span class="date">2026 · 05</span><h3>신라 헤리티지를 담은 봄 메뉴 개발기</h3><p>경주의 제철 재료와 신라 문화를 한 상에 녹여낸 시즌 메뉴 이야기.</p></div></div>
+      <div class="note reveal"><div class="nh" style="background:linear-gradient(135deg,#cdd3c2,#aeb79c)"></div><div class="nb"><span class="date">2026 · 04</span><h3>외국인 단체 할랄 케이터링 현장</h3><p>특수 식이 대응과 다국어 응대로 완성한 인바운드 행사 스케치.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2>자주 묻는 질문</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-wrap">
+      <details class="faq reveal"><summary>최소 주문 인원과 규모는 어떻게 되나요?</summary><div class="fa">소규모 행사부터 수천 명 규모의 대규모 행사까지 대응합니다. 행사 성격·예산에 따라 맞춤 제안을 드리니, 견적 문의 시 예상 인원을 알려주세요.</div></details>
+      <details class="faq reveal"><summary>얼마나 미리 문의해야 하나요?</summary><div class="fa">대규모·다일정 행사는 사전 생산 및 인력·물류 준비가 필요하므로 여유 있게 문의하실수록 좋습니다. 급한 일정도 가능 여부를 신속히 안내드립니다.</div></details>
+      <details class="faq reveal"><summary>할랄·채식 등 특수 식이도 가능한가요?</summary><div class="fa">네. 할랄·채식/비건·알레르기 대응 등 특수 식이 요건을 반영할 수 있으며, 외국인 단체를 위한 다국어 응대도 지원합니다.</div></details>
+      <details class="faq reveal"><summary>관공서 견적서·증빙 발급이 되나요?</summary><div class="fa">여성기업 인증을 보유한 정식 사업자로, 관공서·공공행사에 필요한 명확한 견적서와 증빙 서류를 제공합니다.</div></details>
+      <details class="faq reveal"><summary>출장 가능 지역은 어디까지인가요?</summary><div class="fa">경주를 거점으로 대구·경북 전 지역 출장 케이터링을 진행합니다. 그 외 지역도 규모에 따라 상담 가능하니 문의해 주세요.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA band ===== -->
+<section class="cta-band">
+  <div class="wrap">
+    <p class="eyebrow">Get Started</p>
+    <h2>행사를 준비 중이신가요?</h2>
+    <p>인원·일정·예산만 알려주시면, 행사 성격에 맞는 맞춤 견적을 빠르게 안내해 드립니다.</p>
+    <a href="#contact" class="btn btn-gold">지금 무료 견적 받기 →</a>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="sec" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <p class="eyebrow">Get a Quote</p>
+      <h2>견적·상담 문의</h2>
+      <p style="color:var(--muted);margin-bottom:1.4rem">아래 항목을 남겨주시면 담당자가 <b>영업일 기준 1일 이내</b> 회신드립니다. 급하신 경우 전화·카카오로 문의해 주세요.</p>
+      <div class="ci-row"><span class="ic">📞</span><div><b>전화 문의</b><span><a href="tel:01023881457">010-2388-1457</a></span></div></div>
+      <div class="ci-row"><span class="ic">💬</span><div><b>카카오톡 채널 / 네이버 톡톡</b><span>실시간 상담 채널 연결</span></div></div>
+      <div class="ci-row"><span class="ic">✉️</span><div><b>이메일</b><span><a href="mailto:bje1457@naver.com">bje1457@naver.com</a></span></div></div>
+      <div class="ci-row"><span class="ic">📍</span><div><b>본사</b><span>경상북도 경주시 원효로 154-15 1층</span></div></div>
+    </div>
+
+    <form class="quote reveal" onsubmit="return submitQuote(event)">
+      <div id="formFields">
+        <h3>온라인 견적 문의</h3>
+        <p class="fsub">* 표시는 필수 항목입니다.</p>
+        <div class="row2">
+          <div class="field"><label>기관/업체명<span class="req">*</span></label><input required placeholder="예: ○○학회 사무국"></div>
+          <div class="field"><label>담당자 성함<span class="req">*</span></label><input required placeholder="홍길동"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>연락처<span class="req">*</span></label><input required placeholder="010-0000-0000"></div>
+          <div class="field"><label>이메일</label><input type="email" placeholder="name@company.com"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>발주처 유형</label><select><option value="">선택</option><option>학회·학술대회</option><option>기업</option><option>관공서</option><option>여행사·MICE</option><option>기타</option></select></div>
+          <div class="field"><label>행사 유형</label><select><option value="">선택</option><option>케이터링</option><option>단체도시락</option><option>프라이빗 다이닝</option><option>쿠킹클래스</option><option>기타</option></select></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>행사 일자</label><input type="date"></div>
+          <div class="field"><label>행사 인원</label><input type="number" min="1" placeholder="예: 500"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>행사 장소</label><input placeholder="예: 경주 화백컨벤션센터"></div>
+          <div class="field"><label>1인 예산 / 총예산</label><input placeholder="예: 1인 25,000원"></div>
+        </div>
+        <div class="field">
+          <label>특수 요건 (복수 선택)</label>
+          <div class="chips">
+            <span class="chip" onclick="this.classList.toggle('on')">할랄</span>
+            <span class="chip" onclick="this.classList.toggle('on')">채식/비건</span>
+            <span class="chip" onclick="this.classList.toggle('on')">알레르기 대응</span>
+            <span class="chip" onclick="this.classList.toggle('on')">다국어 응대</span>
+            <span class="chip" onclick="this.classList.toggle('on')">기타</span>
+          </div>
+        </div>
+        <div class="field"><label>문의 내용</label><textarea rows="3" placeholder="행사 개요, 원하시는 구성, 기타 요청사항을 자유롭게 남겨주세요."></textarea></div>
+        <label class="consent"><input type="checkbox" required style="width:auto;margin-top:4px">
+          <span>개인정보 수집·이용에 동의합니다. 입력하신 정보는 견적 상담·회신 목적으로만 이용되며 보관기간 경과 후 파기됩니다. <a href="#">개인정보처리방침</a></span>
+        </label>
+        <button type="submit" class="btn btn-ghost" style="width:100%;justify-content:center">견적 문의 보내기 →</button>
+        <p class="form-note">⚠️ 본 페이지는 디자인 미리보기입니다. 실제 이메일 발송·저장은 Node.js/Next.js 연동 시 작동합니다.</p>
+      </div>
+      <div class="form-ok" id="formOk">
+        <div style="font-size:2.2rem">✅</div>
+        <h3 style="font-family:var(--serif);color:var(--navy);margin:.6rem 0">문의가 접수되었습니다</h3>
+        <p style="color:var(--muted);font-size:.9rem">영업일 기준 1일 이내에 담당자가 회신드립니다. 감사합니다.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="logo">더 신라 <b>테이블</b><small>THE SILLA TABLE</small></div>
+        <div class="foot-biz">
+          천년 고도 경주의 품격을 담은 프리미엄 MICE 케이터링·단체도시락.<br>
+          상호: 더 신라 테이블 &nbsp;|&nbsp; 대표: 변정은<br>
+          주소: 경상북도 경주시 원효로 154-15 1층 &nbsp;|&nbsp; 대표전화: 010-2388-1457 &nbsp;|&nbsp; 이메일: bje1457@naver.com<br>
+          <span style="color:rgba(248,244,236,.45);font-size:.8rem">여성기업 인증 사업자</span>
+        </div>
+      </div>
+      <div>
+        <div class="foot-links">
+          <a href="#services">서비스</a><a href="#about">브랜드</a><a href="#references">레퍼런스</a><a href="#contact">견적문의</a>
+        </div>
+        <div class="foot-links" style="margin-top:1rem">
+          <a href="#">이용약관</a><a href="#"><b>개인정보처리방침</b></a><a href="https://www.instagram.com/경주케이터링" target="_blank" rel="noopener">인스타그램 @경주케이터링</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 더 신라 테이블. All rights reserved.</span>
+      <span>Benchmark reference: monatable.com 구조 계승 · B2B/헤리티지 재구성</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Quick buttons ===== -->
+<div class="quick">
+  <a href="#" class="q-kakao" title="카카오톡 채널">💬</a>
+  <a href="#" class="q-naver" title="네이버 톡톡">N</a>
+  <a href="tel:01023881457" class="q-tel" title="전화 010-2388-1457">📞</a>
+  <a href="https://www.instagram.com/경주케이터링" target="_blank" rel="noopener" class="q-insta" title="인스타그램 @경주케이터링">📷</a>
+  <a href="#contact" class="q-quote" title="온라인 견적">견적<br>문의</a>
+</div>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>{hdr.classList.toggle('solid',window.scrollY>60)};
+  window.addEventListener('scroll',onScroll);onScroll();
+
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  function filterCase(btn){
+    document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const f=btn.dataset.f;
+    document.querySelectorAll('#caseGrid .case').forEach(c=>{
+      c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';
+    });
+  }
+
+  function submitQuote(e){
+    e.preventDefault();
+    document.getElementById('formFields').style.display='none';
+    document.getElementById('formOk').classList.add('show');
+    document.getElementById('formOk').scrollIntoView({behavior:'smooth',block:'center'});
+    return false;
+  }
+</script>
+</body>
+</html>
