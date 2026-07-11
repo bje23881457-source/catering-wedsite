@@ -729,8 +729,8 @@
           <div class="field"><label>Contact Name<span class="req">*</span></label><input required placeholder="John Smith"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>Phone<span class="req">*</span></label><input required placeholder="010-0000-0000"></div>
-          <div class="field"><label>Email</label><input type="email" placeholder="name@company.com"></div>
+          <div class="field"><label>Contact Phone<span class="req">*</span></label><input required type="tel" placeholder="010-0000-0000"></div>
+          <div class="field"><label>Contact Email<span class="req">*</span></label><input required type="email" placeholder="name@company.com"></div>
         </div>
         <div class="row2">
           <div class="field"><label>Client Type</label><select><option value="">Select</option><option>Academic Conference</option><option>Corporate</option><option>Government</option><option>Travel Agency / MICE</option><option>Other</option></select></div>
@@ -738,22 +738,13 @@
         </div>
         <div class="row2">
           <div class="field"><label>Event Date</label><input type="date"></div>
-          <div class="field"><label>Number of Guests</label><input type="number" id="fHeadcount" min="1" placeholder="e.g. 500"></div>
+          <div class="field"><label>Event Time</label><input type="time"></div>
         </div>
         <div class="row2">
+          <div class="field"><label>Number of Guests</label><input type="number" id="fHeadcount" min="1" placeholder="e.g. 500"></div>
           <div class="field"><label>Venue</label><input placeholder="e.g. Gyeongju HICO Convention Center"></div>
-          <div class="field"><label>Per-person / Total Budget</label><input placeholder="e.g. 25,000 KRW per person"></div>
         </div>
-        <div class="field">
-          <label>Special Requirements (multiple choice)</label>
-          <div class="chips">
-            <span class="chip" onclick="this.classList.toggle('on')">Halal</span>
-            <span class="chip" onclick="this.classList.toggle('on')">Vegetarian/Vegan</span>
-            <span class="chip" onclick="this.classList.toggle('on')">Allergy-friendly</span>
-            <span class="chip" onclick="this.classList.toggle('on')">Multilingual</span>
-            <span class="chip" onclick="this.classList.toggle('on')">Other</span>
-          </div>
-        </div>
+        <div class="field"><label>Per-person / Total Budget</label><input placeholder="e.g. 25,000 KRW per person"></div>
         <div class="field"><label>Message</label><textarea rows="3" placeholder="Feel free to share your event overview, desired lineup and any other requests."></textarea></div>
         <label class="consent"><input type="checkbox" required style="width:auto;margin-top:4px">
           <span>I agree to the collection and use of my personal information. The information you provide will be used solely for quote consultation and replies, and will be discarded after the retention period. <a href="privacy.html" target="_blank">Privacy Policy</a></span>

@@ -729,8 +729,8 @@
           <div class="field"><label>담당자 성함<span class="req">*</span></label><input required placeholder="홍길동"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>연락처<span class="req">*</span></label><input required placeholder="010-0000-0000"></div>
-          <div class="field"><label>이메일</label><input type="email" placeholder="name@company.com"></div>
+          <div class="field"><label>담당자 연락처<span class="req">*</span></label><input required type="tel" placeholder="010-0000-0000"></div>
+          <div class="field"><label>담당자 이메일<span class="req">*</span></label><input required type="email" placeholder="name@company.com"></div>
         </div>
         <div class="row2">
           <div class="field"><label>발주처 유형</label><select><option value="">선택</option><option>학회·학술대회</option><option>기업</option><option>관공서</option><option>여행사·MICE</option><option>기타</option></select></div>
@@ -738,22 +738,13 @@
         </div>
         <div class="row2">
           <div class="field"><label>행사 일자</label><input type="date"></div>
-          <div class="field"><label>행사 인원</label><input type="number" id="fHeadcount" min="1" placeholder="예: 500"></div>
+          <div class="field"><label>행사 시간</label><input type="time"></div>
         </div>
         <div class="row2">
+          <div class="field"><label>행사 인원</label><input type="number" id="fHeadcount" min="1" placeholder="예: 500"></div>
           <div class="field"><label>행사 장소</label><input placeholder="예: 경주 화백컨벤션센터"></div>
-          <div class="field"><label>1인 예산 / 총예산</label><input placeholder="예: 1인 25,000원"></div>
         </div>
-        <div class="field">
-          <label>특수 요건 (복수 선택)</label>
-          <div class="chips">
-            <span class="chip" onclick="this.classList.toggle('on')">할랄</span>
-            <span class="chip" onclick="this.classList.toggle('on')">채식/비건</span>
-            <span class="chip" onclick="this.classList.toggle('on')">알레르기 대응</span>
-            <span class="chip" onclick="this.classList.toggle('on')">다국어 응대</span>
-            <span class="chip" onclick="this.classList.toggle('on')">기타</span>
-          </div>
-        </div>
+        <div class="field"><label>1인 예산 / 총예산</label><input placeholder="예: 1인 25,000원"></div>
         <div class="field"><label>문의 내용</label><textarea rows="3" placeholder="행사 개요, 원하시는 구성, 기타 요청사항을 자유롭게 남겨주세요."></textarea></div>
         <label class="consent"><input type="checkbox" required style="width:auto;margin-top:4px">
           <span>개인정보 수집·이용에 동의합니다. 입력하신 정보는 견적 상담·회신 목적으로만 이용되며 보관기간 경과 후 파기됩니다. <a href="privacy.html" target="_blank">개인정보처리방침</a></span>
