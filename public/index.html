@@ -269,6 +269,32 @@
   .form-ok{display:none;text-align:center;padding:2.4rem}
   .form-ok.show{display:block}
 
+  /* ===== Estimator ===== */
+  .estimator{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:2.8rem;box-shadow:var(--shadow-sm);margin-bottom:3.5rem}
+  .est-head{text-align:center;max-width:660px;margin:0 auto 2.2rem}
+  .est-head h3{font-family:var(--serif);font-size:1.7rem;color:var(--espresso);margin:.6rem 0 .8rem;font-weight:500}
+  .est-head p{color:var(--taupe);font-size:.92rem;font-weight:300}
+  .est-types{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem;margin-bottom:1.8rem}
+  .est-chip{padding:1rem .6rem;border:1px solid var(--line-2);background:var(--cream);border-radius:12px;font-family:var(--sans);font-size:.9rem;color:var(--cocoa);cursor:pointer;transition:.25s;text-align:center;line-height:1.35}
+  .est-chip small{display:block;font-family:var(--lat);font-size:.78rem;color:var(--taupe);margin-top:.25rem;letter-spacing:.03em}
+  .est-chip:hover{border-color:var(--clay)}
+  .est-chip.on{background:var(--clay);color:#fff;border-color:var(--clay)}
+  .est-chip.on small{color:rgba(255,255,255,.8)}
+  .est-controls{display:flex;gap:1rem;align-items:flex-end;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem}
+  .ec-field{display:flex;flex-direction:column;gap:.45rem}
+  .ec-field label{font-size:.83rem;color:var(--cocoa)}
+  .ec-field input{width:180px;padding:.85em 1em;border:1px solid var(--line-2);border-radius:10px;background:var(--cream);font-family:var(--sans);font-size:1rem;color:var(--espresso)}
+  .ec-field input:focus{outline:none;border-color:var(--clay);background:var(--paper)}
+  .est-result{text-align:center;background:linear-gradient(135deg,#faf1e7,#f2e5d4);border:1px solid var(--line);border-radius:14px;padding:2.2rem;display:none}
+  .est-result.show{display:block;animation:rise .5s}
+  .est-result .er-label{font-size:.82rem;color:var(--taupe);letter-spacing:.04em}
+  .est-result .er-amount{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);color:var(--clay-deep);font-weight:600;margin:.5rem 0}
+  .est-result .er-unit{font-size:.9rem;color:var(--cocoa)}
+  .est-result .er-note{font-size:.77rem;color:var(--taupe);margin:1.1rem auto 0;max-width:560px;line-height:1.7}
+  .est-result .er-cta{margin-top:1.5rem}
+  @media(max-width:820px){.est-types{grid-template-columns:1fr 1fr 1fr}}
+  @media(max-width:520px){.est-types{grid-template-columns:1fr 1fr}.estimator{padding:1.8rem}}
+
   /* ===== Footer ===== */
   footer{background:var(--espresso);color:rgba(255,250,243,.68);padding:4rem 0 2.2rem;font-size:.86rem;font-weight:300}
   footer .logo{color:#fffaf3;margin-bottom:1rem}
@@ -649,6 +675,37 @@
 
 <!-- ===== Contact ===== -->
 <section class="sec" id="contact">
+  <div class="wrap">
+    <div class="estimator reveal">
+      <div class="est-head">
+        <p class="eyebrow">Quick Estimate</p>
+        <h3>예상 견적 바로 조회</h3>
+        <p>케이터링 종류와 인원을 선택하시면 예상 견적을 즉시 확인하실 수 있습니다. B2B 담당자분들의 빠른 내부 검토를 위한 참고용 기능입니다.</p>
+      </div>
+      <div class="est-types" id="estTypes">
+        <button type="button" class="est-chip" data-key="coffee" onclick="selectEst(this)">커피 케이터링<small>Coffee</small></button>
+        <button type="button" class="est-chip on" data-key="tea" onclick="selectEst(this)">다과 케이터링<small>Tea &amp; Snack</small></button>
+        <button type="button" class="est-chip" data-key="teabox" onclick="selectEst(this)">다과 박스<small>Snack Box</small></button>
+        <button type="button" class="est-chip" data-key="semi" onclick="selectEst(this)">세미 케이터링<small>Semi</small></button>
+        <button type="button" class="est-chip" data-key="box" onclick="selectEst(this)">박스 케이터링<small>Box</small></button>
+        <button type="button" class="est-chip" data-key="meal" onclick="selectEst(this)">식사 케이터링<small>Full Meal</small></button>
+      </div>
+      <div class="est-controls">
+        <div class="ec-field">
+          <label>예상 인원 (명)</label>
+          <input type="number" id="estCount" min="1" value="50" onkeydown="if(event.key==='Enter')calcEstimate()">
+        </div>
+        <button type="button" class="btn btn-clay" onclick="calcEstimate()">예상 견적 조회 →</button>
+      </div>
+      <div class="est-result" id="estResult">
+        <div class="er-label">예상 견적 (부가세 별도)</div>
+        <div class="er-amount">—</div>
+        <div class="er-unit"></div>
+        <div class="er-note">※ 표시 금액은 <b>예시 단가 기준의 대략적 추정치</b>입니다. 실제 견적은 메뉴 구성·행사 지역·일정·부대 비용(세팅·인력·배송 등)에 따라 달라지며, 상담 후 정확히 확정됩니다.</div>
+        <div class="er-cta"><button type="button" class="btn btn-line" onclick="estToForm()">이 내용으로 견적 문의하기 →</button></div>
+      </div>
+    </div>
+  </div>
   <div class="wrap contact-grid">
     <div class="contact-info reveal">
       <p class="eyebrow">Get a Quote</p>
@@ -660,7 +717,7 @@
       <div class="ci-row"><span class="ic">📍</span><div><b>본사</b><span>경상북도 경주시 원효로 154-15 1층</span></div></div>
     </div>
 
-    <form class="quote reveal" onsubmit="return submitQuote(event)">
+    <form class="quote reveal" id="quoteForm" onsubmit="return submitQuote(event)">
       <div id="formFields">
         <h3>온라인 견적 문의</h3>
         <p class="fsub">* 표시는 필수 항목입니다.</p>
@@ -678,7 +735,7 @@
         </div>
         <div class="row2">
           <div class="field"><label>행사 일자</label><input type="date"></div>
-          <div class="field"><label>행사 인원</label><input type="number" min="1" placeholder="예: 500"></div>
+          <div class="field"><label>행사 인원</label><input type="number" id="fHeadcount" min="1" placeholder="예: 500"></div>
         </div>
         <div class="row2">
           <div class="field"><label>행사 장소</label><input placeholder="예: 경주 화백컨벤션센터"></div>
@@ -763,6 +820,40 @@
     document.querySelectorAll('#caseGrid .case').forEach(c=>{
       c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';
     });
+  }
+
+  /* ===== 예상 견적 계산기 =====
+     아래 1인 단가(min~max, 원)는 예시 값입니다. 실제 단가로 바꾸시려면 숫자만 수정하세요. */
+  const EST_PRICES = {
+    coffee: { name:'커피 케이터링', min:3000,  max:6000  },
+    tea:    { name:'다과 케이터링', min:8000,  max:15000 },
+    teabox: { name:'다과 박스',     min:9000,  max:16000 },
+    semi:   { name:'세미 케이터링', min:15000, max:25000 },
+    box:    { name:'박스 케이터링', min:18000, max:30000 },
+    meal:   { name:'식사 케이터링', min:25000, max:45000 }
+  };
+  let estType = 'tea';
+  function selectEst(el){
+    document.querySelectorAll('.est-chip').forEach(c=>c.classList.remove('on'));
+    el.classList.add('on');
+    estType = el.dataset.key;
+  }
+  function won(n){ return n.toLocaleString('ko-KR'); }
+  function calcEstimate(){
+    const cnt = parseInt(document.getElementById('estCount').value) || 0;
+    if(cnt < 1){ alert('예상 인원을 입력해 주세요.'); return; }
+    const p = EST_PRICES[estType];
+    const tmin = cnt * p.min, tmax = cnt * p.max;
+    const r = document.getElementById('estResult');
+    r.querySelector('.er-amount').textContent = '약 ' + won(tmin) + '원 ~ ' + won(tmax) + '원';
+    r.querySelector('.er-unit').textContent = p.name + ' · ' + won(cnt) + '명 · 1인 ' + won(p.min) + '~' + won(p.max) + '원 기준';
+    r.classList.add('show');
+  }
+  function estToForm(){
+    const cnt = document.getElementById('estCount').value;
+    const fh = document.getElementById('fHeadcount');
+    if(fh && cnt) fh.value = cnt;
+    document.getElementById('quoteForm').scrollIntoView({ behavior:'smooth', block:'center' });
   }
 
   function submitQuote(e){
