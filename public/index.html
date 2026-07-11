@@ -687,7 +687,7 @@
         <button type="button" class="est-chip on" data-key="tea" onclick="selectEst(this)">다과 케이터링<small>Tea &amp; Snack</small></button>
         <button type="button" class="est-chip" data-key="teabox" onclick="selectEst(this)">다과 박스<small>Snack Box</small></button>
         <button type="button" class="est-chip" data-key="semi" onclick="selectEst(this)">세미 케이터링<small>Semi</small></button>
-        <button type="button" class="est-chip" data-key="box" onclick="selectEst(this)">박스 케이터링<small>Box</small></button>
+        <button type="button" class="est-chip" data-key="box" onclick="selectEst(this)">박스 케이터링<small>별도 문의</small></button>
         <button type="button" class="est-chip" data-key="meal" onclick="selectEst(this)">식사 케이터링<small>Full Meal</small></button>
       </div>
       <div class="est-controls">
@@ -825,11 +825,11 @@
   /* ===== 예상 견적 계산기 =====
      아래 1인 단가(min~max, 원)는 예시 값입니다. 실제 단가로 바꾸시려면 숫자만 수정하세요. */
   const EST_PRICES = {
-    coffee: { name:'커피 케이터링', min:3000,  max:6000  },
+    coffee: { name:'커피 케이터링', min:2500,  max:3000  },
     tea:    { name:'다과 케이터링', min:10000, max:25000 },
-    teabox: { name:'다과 박스',     min:9000,  max:16000 },
+    teabox: { name:'다과 박스',     min:8000,  max:20000 },
     semi:   { name:'세미 케이터링', min:20000, max:35000 },
-    box:    { name:'박스 케이터링', min:18000, max:30000 },
+    box:    { name:'박스 케이터링', inquiry:true },
     meal:   { name:'식사 케이터링', min:40000, max:70000 }
   };
   let estType = 'tea';
@@ -843,8 +843,14 @@
     const cnt = parseInt(document.getElementById('estCount').value) || 0;
     if(cnt < 1){ alert('예상 인원을 입력해 주세요.'); return; }
     const p = EST_PRICES[estType];
-    const tmin = cnt * p.min, tmax = cnt * p.max;
     const r = document.getElementById('estResult');
+    if(p.inquiry){
+      r.querySelector('.er-amount').textContent = '별도 문의';
+      r.querySelector('.er-unit').textContent = p.name + ' · 구성에 따라 개별 견적이 필요합니다. 아래 문의 폼으로 상담을 요청해 주세요.';
+      r.classList.add('show');
+      return;
+    }
+    const tmin = cnt * p.min, tmax = cnt * p.max;
     r.querySelector('.er-amount').textContent = '약 ' + won(tmin) + '원 ~ ' + won(tmax) + '원';
     r.querySelector('.er-unit').textContent = p.name + ' · ' + won(cnt) + '명 · 1인 ' + won(p.min) + '~' + won(p.max) + '원 기준';
     r.classList.add('show');
