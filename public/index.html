@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Marcellus&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#faf6ef;        /* 메인 배경 */
@@ -27,9 +27,9 @@
     --sage:#7d8368;         /* 보조 톤 */
     --line:rgba(47,40,31,.10);
     --line-2:rgba(47,40,31,.16);
-    --serif:'Nanum Myeongjo','Noto Serif KR', serif;
+    --serif:'Gowun Batang','Noto Serif KR', serif;
     --sans:'Pretendard Variable','Pretendard','Noto Sans KR', sans-serif;
-    --lat:'Fraunces', serif;
+    --lat:'Marcellus', serif;
     --shadow:0 24px 60px rgba(90,60,30,.10);
     --shadow-sm:0 14px 36px rgba(90,60,30,.07);
   }
@@ -75,9 +75,9 @@
 
   /* ===== Hero ===== */
   .hero{min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--cream);padding:7rem 0 3rem}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center;width:100%}
+  .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:3.5rem;align-items:center;width:100%}
   .hero-copy .eyebrow{opacity:0;animation:rise 1s .1s forwards}
-  .hero-copy h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.32;color:var(--espresso);margin:1.4rem 0 1.6rem;opacity:0;animation:rise 1s .25s forwards;letter-spacing:-.01em}
+  .hero-copy h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.32;color:var(--espresso);margin:1.4rem 0 1.6rem;opacity:0;animation:rise 1s .25s forwards;letter-spacing:-.01em}
   .hero-copy h1 em{font-style:italic;font-family:var(--lat);font-weight:500;color:var(--clay)}
   .hero-copy p.lead{font-size:clamp(1rem,1.5vw,1.16rem);font-weight:300;max-width:520px;color:var(--cocoa);opacity:0;animation:rise 1s .4s forwards;line-height:2}
   .hero-cta{display:flex;gap:1rem;margin-top:2.6rem;flex-wrap:wrap;opacity:0;animation:rise 1s .55s forwards}
@@ -87,7 +87,7 @@
   .hero-stats .st b{font-family:var(--lat);font-size:2.7rem;color:var(--clay);font-weight:600;display:block;line-height:1}
   .hero-stats .st span{font-size:.84rem;color:var(--taupe);letter-spacing:.03em}
   /* hero visual (warm image placeholder — 사진 교체 영역) */
-  .hero-visual{position:relative;opacity:0;animation:fade 1.3s .5s forwards;max-width:400px;margin-left:auto}
+  .hero-visual{position:relative;opacity:0;animation:fade 1.3s .5s forwards}
   .hero-frame{position:relative;border-radius:200px 200px 14px 14px;overflow:hidden;aspect-ratio:3/2.9;
     background:linear-gradient(160deg,#e9c9a8 0%,#d99f74 38%,#b3714c 78%,#8f5a3a 100%);box-shadow:var(--shadow)}
   .hero-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
