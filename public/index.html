@@ -725,32 +725,32 @@
         <h3>온라인 견적 문의</h3>
         <p class="fsub">* 표시는 필수 항목입니다.</p>
         <div class="row2">
-          <div class="field"><label>기관/업체명<span class="req">*</span></label><input required placeholder="예: ○○학회 사무국"></div>
-          <div class="field"><label>담당자 성함<span class="req">*</span></label><input required placeholder="홍길동"></div>
+          <div class="field"><label>기관/업체명<span class="req">*</span></label><input name="org_name" required placeholder="예: ○○학회 사무국"></div>
+          <div class="field"><label>담당자 성함<span class="req">*</span></label><input name="contact_name" required placeholder="홍길동"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>담당자 연락처<span class="req">*</span></label><input required type="tel" placeholder="010-0000-0000"></div>
-          <div class="field"><label>담당자 이메일<span class="req">*</span></label><input required type="email" placeholder="name@company.com"></div>
+          <div class="field"><label>담당자 연락처<span class="req">*</span></label><input name="phone" required type="tel" placeholder="010-0000-0000"></div>
+          <div class="field"><label>담당자 이메일<span class="req">*</span></label><input name="email" required type="email" placeholder="name@company.com"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>발주처 유형</label><select><option value="">선택</option><option>학회·학술대회</option><option>기업</option><option>관공서</option><option>여행사·MICE</option><option>기타</option></select></div>
-          <div class="field"><label>행사 유형</label><select><option value="">선택</option><option>케이터링</option><option>단체도시락</option><option>프라이빗 다이닝</option><option>쿠킹클래스</option><option>기타</option></select></div>
+          <div class="field"><label>발주처 유형</label><select name="org_type"><option value="">선택</option><option>학회·학술대회</option><option>기업</option><option>관공서</option><option>여행사·MICE</option><option>기타</option></select></div>
+          <div class="field"><label>행사 유형</label><select name="event_type"><option value="">선택</option><option>케이터링</option><option>단체도시락</option><option>프라이빗 다이닝</option><option>쿠킹클래스</option><option>기타</option></select></div>
         </div>
         <div class="row2">
-          <div class="field"><label>행사 일자</label><input type="date"></div>
-          <div class="field"><label>행사 시간</label><input type="time"></div>
+          <div class="field"><label>행사 일자</label><input name="event_date" type="date"></div>
+          <div class="field"><label>행사 시간</label><input name="event_time" type="time"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>행사 인원</label><input type="number" id="fHeadcount" min="1" placeholder="예: 500"></div>
-          <div class="field"><label>행사 장소</label><input placeholder="예: 경주 화백컨벤션센터"></div>
+          <div class="field"><label>행사 인원</label><input name="headcount" type="number" id="fHeadcount" min="1" placeholder="예: 500"></div>
+          <div class="field"><label>행사 장소</label><input name="location" placeholder="예: 경주 화백컨벤션센터"></div>
         </div>
-        <div class="field"><label>1인 예산 / 총예산</label><input placeholder="예: 1인 25,000원"></div>
-        <div class="field"><label>문의 내용</label><textarea rows="3" placeholder="행사 개요, 원하시는 구성, 기타 요청사항을 자유롭게 남겨주세요."></textarea></div>
+        <div class="field"><label>1인 예산 / 총예산</label><input name="budget" placeholder="예: 1인 25,000원"></div>
+        <div class="field"><label>문의 내용</label><textarea name="message" rows="3" placeholder="행사 개요, 원하시는 구성, 특수 요건(할랄·채식 등), 기타 요청사항을 자유롭게 남겨주세요."></textarea></div>
         <label class="consent"><input type="checkbox" required style="width:auto;margin-top:4px">
           <span>개인정보 수집·이용에 동의합니다. 입력하신 정보는 견적 상담·회신 목적으로만 이용되며 보관기간 경과 후 파기됩니다. <a href="privacy.html" target="_blank">개인정보처리방침</a></span>
         </label>
         <button type="submit" class="btn btn-clay" style="width:100%;justify-content:center">견적 문의 보내기 →</button>
-        <p class="form-note">⚠️ 본 페이지는 디자인 미리보기입니다. 실제 이메일 발송·저장은 폼 연동 시 작동합니다.</p>
+        <p class="form-note">제출하신 정보는 견적 상담·회신 목적으로만 사용되며, 관리자에게 안전하게 접수됩니다.</p>
       </div>
       <div class="form-ok" id="formOk">
         <div style="font-size:2.4rem">🌿</div>
@@ -856,8 +856,12 @@
     document.getElementById('quoteForm').scrollIntoView({ behavior:'smooth', block:'center' });
   }
 
-  function submitQuote(e){
+  async function submitQuote(e){
     e.preventDefault();
+    const f = e.target;
+    const g = n => (f.elements[n] ? f.elements[n].value : '');
+    const data = {org_name:g('org_name'),contact_name:g('contact_name'),phone:g('phone'),email:g('email'),org_type:g('org_type'),event_type:g('event_type'),event_date:g('event_date'),event_time:g('event_time'),headcount:g('headcount'),location:g('location'),budget:g('budget'),message:g('message')};
+    try{ await fetch('/api/inquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); }catch(err){}
     document.getElementById('formFields').style.display='none';
     document.getElementById('formOk').classList.add('show');
     document.getElementById('formOk').scrollIntoView({behavior:'smooth',block:'center'});

@@ -725,32 +725,32 @@
         <h3>Online Quote Inquiry</h3>
         <p class="fsub">* indicates a required field.</p>
         <div class="row2">
-          <div class="field"><label>Organization / Company<span class="req">*</span></label><input required placeholder="e.g. OO Society Secretariat"></div>
-          <div class="field"><label>Contact Name<span class="req">*</span></label><input required placeholder="John Smith"></div>
+          <div class="field"><label>Organization / Company<span class="req">*</span></label><input name="org_name" required placeholder="e.g. OO Society Secretariat"></div>
+          <div class="field"><label>Contact Name<span class="req">*</span></label><input name="contact_name" required placeholder="John Smith"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>Contact Phone<span class="req">*</span></label><input required type="tel" placeholder="010-0000-0000"></div>
-          <div class="field"><label>Contact Email<span class="req">*</span></label><input required type="email" placeholder="name@company.com"></div>
+          <div class="field"><label>Contact Phone<span class="req">*</span></label><input name="phone" required type="tel" placeholder="010-0000-0000"></div>
+          <div class="field"><label>Contact Email<span class="req">*</span></label><input name="email" required type="email" placeholder="name@company.com"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>Client Type</label><select><option value="">Select</option><option>Academic Conference</option><option>Corporate</option><option>Government</option><option>Travel Agency / MICE</option><option>Other</option></select></div>
-          <div class="field"><label>Event Type</label><select><option value="">Select</option><option>Catering</option><option>Group Lunchbox</option><option>Private Dining</option><option>Cooking Class</option><option>Other</option></select></div>
+          <div class="field"><label>Client Type</label><select name="org_type"><option value="">Select</option><option>Academic Conference</option><option>Corporate</option><option>Government</option><option>Travel Agency / MICE</option><option>Other</option></select></div>
+          <div class="field"><label>Event Type</label><select name="event_type"><option value="">Select</option><option>Catering</option><option>Group Lunchbox</option><option>Private Dining</option><option>Cooking Class</option><option>Other</option></select></div>
         </div>
         <div class="row2">
-          <div class="field"><label>Event Date</label><input type="date"></div>
-          <div class="field"><label>Event Time</label><input type="time"></div>
+          <div class="field"><label>Event Date</label><input name="event_date" type="date"></div>
+          <div class="field"><label>Event Time</label><input name="event_time" type="time"></div>
         </div>
         <div class="row2">
-          <div class="field"><label>Number of Guests</label><input type="number" id="fHeadcount" min="1" placeholder="e.g. 500"></div>
-          <div class="field"><label>Venue</label><input placeholder="e.g. Gyeongju HICO Convention Center"></div>
+          <div class="field"><label>Number of Guests</label><input name="headcount" type="number" id="fHeadcount" min="1" placeholder="e.g. 500"></div>
+          <div class="field"><label>Venue</label><input name="location" placeholder="e.g. Gyeongju HICO Convention Center"></div>
         </div>
-        <div class="field"><label>Per-person / Total Budget</label><input placeholder="e.g. 25,000 KRW per person"></div>
-        <div class="field"><label>Message</label><textarea rows="3" placeholder="Feel free to share your event overview, desired lineup and any other requests."></textarea></div>
+        <div class="field"><label>Per-person / Total Budget</label><input name="budget" placeholder="e.g. 25,000 KRW per person"></div>
+        <div class="field"><label>Message</label><textarea name="message" rows="3" placeholder="Feel free to share your event overview, desired lineup, special requirements (Halal, vegetarian, etc.) and any other requests."></textarea></div>
         <label class="consent"><input type="checkbox" required style="width:auto;margin-top:4px">
           <span>I agree to the collection and use of my personal information. The information you provide will be used solely for quote consultation and replies, and will be discarded after the retention period. <a href="privacy.html" target="_blank">Privacy Policy</a></span>
         </label>
         <button type="submit" class="btn btn-clay" style="width:100%;justify-content:center">Send Inquiry →</button>
-        <p class="form-note">⚠️ This page is a design preview. Actual email delivery and storage will work once the form is connected.</p>
+        <p class="form-note">Your information is used solely for quote consultation and replies, and is securely received by our team.</p>
       </div>
       <div class="form-ok" id="formOk">
         <div style="font-size:2.4rem">🌿</div>
@@ -856,8 +856,12 @@
     document.getElementById('quoteForm').scrollIntoView({ behavior:'smooth', block:'center' });
   }
 
-  function submitQuote(e){
+  async function submitQuote(e){
     e.preventDefault();
+    const f = e.target;
+    const g = n => (f.elements[n] ? f.elements[n].value : '');
+    const data = {org_name:g('org_name'),contact_name:g('contact_name'),phone:g('phone'),email:g('email'),org_type:g('org_type'),event_type:g('event_type'),event_date:g('event_date'),event_time:g('event_time'),headcount:g('headcount'),location:g('location'),budget:g('budget'),message:g('message')};
+    try{ await fetch('/api/inquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); }catch(err){}
     document.getElementById('formFields').style.display='none';
     document.getElementById('formOk').classList.add('show');
     document.getElementById('formOk').scrollIntoView({behavior:'smooth',block:'center'});

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>더 신라 테이블 · 관리자</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Noto+Serif+KR:wght@500;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf6ef;--paper:#fffdf9;--espresso:#2f281f;--cocoa:#544a3c;--taupe:#8f8574;
+    --clay:#b3714c;--clay-deep:#935a39;--line:rgba(47,40,31,.12);--line2:rgba(47,40,31,.2);
+    --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--jost:'Jost',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--cream);color:var(--cocoa);font-weight:300;line-height:1.6}
+  a{color:var(--clay)}
+  .wrap{width:min(1280px,94%);margin:0 auto}
+
+  /* 로그인 */
+  #login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+  .login-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:2.8rem;max-width:380px;width:100%;box-shadow:0 24px 60px rgba(90,60,30,.1);text-align:center}
+  .login-card .logo{font-family:var(--serif);font-size:1.5rem;color:var(--espresso);font-weight:600}
+  .login-card .logo b{color:var(--clay)}
+  .login-card .sub{font-family:var(--jost);letter-spacing:.25em;text-transform:uppercase;font-size:.7rem;color:var(--taupe);margin:.4rem 0 1.8rem}
+  .login-card input{width:100%;padding:.9em 1em;border:1px solid var(--line2);border-radius:10px;background:var(--cream);font-size:1rem;font-family:var(--sans);margin-bottom:1rem}
+  .login-card input:focus{outline:none;border-color:var(--clay)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.4em;border:none;cursor:pointer;font-family:var(--sans);font-size:.95rem;padding:.85em 1.6em;border-radius:40px;background:var(--clay);color:#fff;transition:.25s;width:100%}
+  .btn:hover{background:var(--clay-deep)}
+  .btn.sm{width:auto;padding:.5em 1.1em;font-size:.85rem}
+  .btn.ghost{background:transparent;border:1px solid var(--line2);color:var(--cocoa)}
+  .err{color:#b3423a;font-size:.85rem;min-height:1.2em;margin-bottom:.6rem}
+
+  /* 대시보드 */
+  #dash{display:none;padding:1.5rem 0 4rem}
+  .top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--line);margin-bottom:1.5rem}
+  .top .logo{font-family:var(--serif);font-size:1.25rem;color:var(--espresso);font-weight:600}
+  .top .logo b{color:var(--clay)}
+  .top .logo span{font-family:var(--jost);letter-spacing:.2em;text-transform:uppercase;font-size:.62rem;color:var(--taupe);display:block;margin-top:2px}
+  .actions{display:flex;gap:.6rem;align-items:center}
+  .stats{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.4rem}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1rem 1.4rem;min-width:120px}
+  .stat b{font-family:var(--jost);font-size:1.8rem;color:var(--clay);display:block;line-height:1}
+  .stat span{font-size:.8rem;color:var(--taupe)}
+  .tablewrap{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:auto}
+  table{border-collapse:collapse;width:100%;min-width:1100px;font-size:.86rem}
+  th{background:#f1e8da;color:var(--espresso);font-weight:500;text-align:left;padding:.8em .7em;white-space:nowrap;position:sticky;top:0}
+  td{padding:.75em .7em;border-top:1px solid var(--line);vertical-align:top}
+  tr:hover td{background:rgba(179,113,76,.04)}
+  .msg{max-width:260px;white-space:pre-wrap;color:var(--cocoa)}
+  .nowrap{white-space:nowrap}
+  .newrow td{background:rgba(179,113,76,.06)}
+  select.status{padding:.4em .5em;border:1px solid var(--line2);border-radius:8px;background:var(--cream);font-family:var(--sans);font-size:.82rem;cursor:pointer}
+  .badge{font-family:var(--jost);font-size:.7rem;letter-spacing:.05em;padding:.2em .6em;border-radius:20px;background:#eadfce;color:var(--clay-deep)}
+  .empty{text-align:center;padding:3rem;color:var(--taupe)}
+  a.phone{color:var(--espresso);text-decoration:none}
+  .muted{color:var(--taupe);font-size:.85rem}
+  @media(max-width:600px){.login-card{padding:2rem}}
+</style>
+</head>
+<body>
+
+<!-- 로그인 화면 -->
+<div id="login">
+  <div class="login-card">
+    <div class="logo">더 신라 <b>테이블</b></div>
+    <div class="sub">Admin</div>
+    <div class="err" id="loginErr"></div>
+    <input type="password" id="pw" placeholder="관리자 비밀번호" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="btn" onclick="doLogin()">로그인</button>
+  </div>
+</div>
+
+<!-- 대시보드 -->
+<div id="dash">
+  <div class="wrap">
+    <div class="top">
+      <div class="logo">더 신라 <b>테이블</b><span>Inquiry Admin</span></div>
+      <div class="actions">
+        <button class="btn sm ghost" onclick="load()">↻ 새로고침</button>
+        <button class="btn sm ghost" onclick="doLogout()">로그아웃</button>
+      </div>
+    </div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="tablewrap">
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th>접수일시</th><th>상태</th><th>기관/업체</th><th>담당자</th><th>연락처</th><th>이메일</th>
+            <th>발주처</th><th>행사유형</th><th>일자·시간</th><th>인원</th><th>장소</th><th>예산</th><th>문의내용</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty" id="empty" style="display:none">아직 접수된 문의가 없습니다.</div>
+    </div>
+    <p class="muted" style="margin-top:1rem">총 <span id="count">0</span>건 · 최신순 정렬</p>
+  </div>
+</div>
+
+<script>
+  const STATUSES = ['신규','응대중','견적발송','완료','보류'];
+
+  async function doLogin(){
+    const pw = document.getElementById('pw').value;
+    const err = document.getElementById('loginErr');
+    err.textContent = '';
+    const res = await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pw})});
+    if(res.ok){ showDash(); load(); }
+    else if(res.status===500){ err.textContent='서버에 ADMIN_PASSWORD가 설정되지 않았습니다.'; }
+    else { err.textContent='비밀번호가 올바르지 않습니다.'; }
+  }
+  async function doLogout(){
+    await fetch('/api/logout',{method:'POST'});
+    location.reload();
+  }
+  function showDash(){
+    document.getElementById('login').style.display='none';
+    document.getElementById('dash').style.display='block';
+  }
+  function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+  function fmtDate(iso){ if(!iso) return ''; const d=new Date(iso); if(isNaN(d)) return iso;
+    const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}.${p(d.getMonth()+1)}.${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`; }
+
+  async function load(){
+    const res = await fetch('/api/inquiries');
+    if(res.status===401){ // 세션 만료
+      document.getElementById('login').style.display='flex';
+      document.getElementById('dash').style.display='none';
+      return;
+    }
+    const data = await res.json();
+    const items = data.items || [];
+    render(items);
+  }
+
+  function render(items){
+    const rows = document.getElementById('rows');
+    const empty = document.getElementById('empty');
+    document.getElementById('count').textContent = items.length;
+    // 통계
+    const counts = {};
+    STATUSES.forEach(s=>counts[s]=0);
+    items.forEach(i=>{ counts[i.status] = (counts[i.status]||0)+1; });
+    const statsEl = document.getElementById('stats');
+    statsEl.innerHTML =
+      `<div class="stat"><b>${items.length}</b><span>전체 문의</span></div>` +
+      `<div class="stat"><b>${counts['신규']||0}</b><span>신규</span></div>` +
+      `<div class="stat"><b>${counts['응대중']||0}</b><span>응대중</span></div>` +
+      `<div class="stat"><b>${counts['완료']||0}</b><span>완료</span></div>`;
+
+    if(!items.length){ rows.innerHTML=''; empty.style.display='block'; return; }
+    empty.style.display='none';
+    rows.innerHTML = items.map(i=>{
+      const sel = `<select class="status" onchange="setStatus(${i.id}, this.value)">` +
+        STATUSES.map(s=>`<option ${s===i.status?'selected':''}>${s}</option>`).join('') + `</select>`;
+      const dt = [esc(i.event_date), esc(i.event_time)].filter(Boolean).join(' ');
+      return `<tr class="${i.status==='신규'?'newrow':''}">
+        <td class="nowrap">${fmtDate(i.created_at)}</td>
+        <td>${sel}</td>
+        <td>${esc(i.org_name)}</td>
+        <td>${esc(i.contact_name)}</td>
+        <td class="nowrap"><a class="phone" href="tel:${esc(i.phone)}">${esc(i.phone)}</a></td>
+        <td class="nowrap">${i.email?`<a href="mailto:${esc(i.email)}">${esc(i.email)}</a>`:''}</td>
+        <td>${esc(i.org_type)}</td>
+        <td>${esc(i.event_type)}</td>
+        <td class="nowrap">${dt}</td>
+        <td>${esc(i.headcount)}</td>
+        <td>${esc(i.location)}</td>
+        <td>${esc(i.budget)}</td>
+        <td class="msg">${esc(i.message)}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  async function setStatus(id, status){
+    await fetch('/api/status',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,status})});
+    load();
+  }
+
+  // 시작 시 이미 로그인돼 있으면 바로 대시보드
+  (async function init(){
+    const res = await fetch('/api/inquiries');
+    if(res.ok){ showDash(); const data=await res.json(); render(data.items||[]); }
+  })();
+</script>
+</body>
+</html>
