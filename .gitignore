@@ -1,4 +1,7 @@
 node_modules/
+.wrangler/
+package-lock.json
+wrangler.toml
 .env*
 .DS_Store
 Thumbs.db

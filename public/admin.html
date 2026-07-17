@@ -103,7 +103,8 @@
 </div>
 
 <script>
-  const STATUSES = ['신규','응대중','견적발송','완료','보류'];
+  // 서버(functions/api/status.js)의 허용 목록과 반드시 같아야 합니다
+  const STATUSES = ['신규','응대중','견적발송','확정','완료','보류','취소'];
 
   async function doLogin(){
     const pw = document.getElementById('pw').value;
