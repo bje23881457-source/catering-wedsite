@@ -37,7 +37,7 @@ export function esc(s) {
 export function shell(title, bodyHtml) {
   return `<div style="font-family:-apple-system,'Segoe UI',sans-serif;background:#faf6ef;padding:24px">
   <div style="max-width:640px;margin:0 auto;background:#fffdf9;border:1px solid rgba(47,40,31,.12);border-radius:14px;padding:28px">
-    <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8f8574">The Silla Table</div>
+    <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8f8574">Hwango Bueok</div>
     <h1 style="font-size:19px;color:#2f281f;margin:6px 0 18px">${esc(title)}</h1>
     ${bodyHtml}
   </div>

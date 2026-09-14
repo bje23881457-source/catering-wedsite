@@ -69,7 +69,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
     );
 
     const mail = sendMail(env, {
-      subject: `[더 신라 테이블] 새 견적 문의 · ${f.org_name || '기관명 미기재'} (${when})`,
+      subject: `[황오부엌] 새 견적 문의 · ${f.org_name || '기관명 미기재'} (${when})`,
       html,
       text: `새 견적 문의\n기관: ${f.org_name}\n담당자: ${f.contact_name} / ${f.phone}\n행사: ${when} · ${f.headcount}명 · ${f.location}\n내용: ${f.message}`
     });
